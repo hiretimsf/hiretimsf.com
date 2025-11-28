@@ -1,6 +1,6 @@
 "use client";
 
-import DesktopHeader from "@/components/header/components/desktop/DesktopHeader";
+import dynamic from "next/dynamic";
 import ProgressBar from "@/components/header/components/shared/ProgressBar";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useMounted } from "@/hooks/use-mounted";
@@ -8,6 +8,10 @@ import { cn } from "@/lib/utils";
 import { useMotionValueEvent, useScroll } from "motion/react";
 import { usePathname } from "next/navigation";
 import { useState, type FC } from "react";
+
+const DesktopHeader = dynamic(() => import("@/components/header/components/desktop/DesktopHeader"), {
+  ssr: false,
+});
 
 interface Props {
   showProgressBar?: boolean;
@@ -21,7 +25,6 @@ const HeaderSkeleton = () => (
       <Skeleton className="h-9 w-16" />
       <Skeleton className="h-9 w-20" />
       <Skeleton className="h-9 w-14" />
-      <Skeleton className="h-9 w-18" />
     </div>
     <Skeleton className="h-9 w-9" />
   </div>

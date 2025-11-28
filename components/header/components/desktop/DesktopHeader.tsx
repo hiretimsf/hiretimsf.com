@@ -1,5 +1,7 @@
 "use client";
 
+import dynamic from "next/dynamic";
+
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -15,10 +17,16 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import type { FC} from "react";
 import React, { memo, Suspense, useCallback } from "react";
-import LogoButton from "@/components/header/components/shared/LogoButton";
-import ThemeToggle from "@/components/header/components/shared/ThemeToggle";
 import NavigationAbout from "./navigations/about/NavigationAbout";
 import { SearchButton } from "@/components/header/components/shared/SearchButton";
+
+const LogoButton = dynamic(() => import("@/components/header/components/shared/LogoButton"), {
+  ssr: false,
+});
+
+const ThemeToggle = dynamic(() => import("@/components/header/components/shared/ThemeToggle"), {
+  ssr: false,
+});
 interface Props {
   activePath: string;
 }
