@@ -10,6 +10,8 @@ import {
   FileTextIcon as ResumeIcon,
   SpeechIcon as ShoutoutIcon,
 } from "lucide-react";
+import projectLinks from "./projectLinks";
+import categories from "./categories";
 
 const navigationLinks: NavigationLinkType[] = [
   {
@@ -42,21 +44,29 @@ const navigationLinks: NavigationLinkType[] = [
       },
     ],
   },
-  {
+ {
     icon: ProjectsIcon,
     href: "/projects",
     label: "Projects",
+    subNavigationLinks: projectLinks.map((project) => ({
+      icon: project.icon,
+      href: project.href,
+      label: project.title,
+      description: project.description,
+    })),
   },
   {
     icon: BlogIcon,
     href: "/blog",
     label: "Blog",
+    subNavigationLinks: categories.map((category) => ({
+      icon: category.icon,
+      href: `/blog/${category.slug}`,
+      label: category.name,
+      description: category.description,
+    })),
   },
-  {
-    icon: ShoutoutIcon,
-    href: "/shoutouts",
-    label: "Shoutouts",
-  },
+
   {
     icon: MailIcon,
     href: "/contact",
