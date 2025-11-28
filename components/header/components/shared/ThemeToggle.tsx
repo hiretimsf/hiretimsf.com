@@ -32,10 +32,10 @@ const ThemeToggle = () => {
       variant="ghost"
       size="icon"
       onClick={switchTheme}
-      className="rounded-md bg-gray-100 hover:bg-gray-200 dark:bg-zinc-900 dark:hover:bg-zinc-950"
+      className="rounded-md bg-transparent hover:bg-gray-100 text-foreground dark:hover:bg-zinc-900"
     >
       <MoonIcon className="hidden size-6 dark:block" />
-      <SunIcon className="text-foreground size-6 dark:hidden" />
+      <SunIcon className="size-6 dark:hidden" />
       <span className="sr-only">Theme Toggle</span>
     </Button>
   );

@@ -18,7 +18,7 @@ import React, { memo, Suspense, useCallback } from "react";
 import LogoButton from "@/components/header/components/shared/LogoButton";
 import ThemeToggle from "@/components/header/components/shared/ThemeToggle";
 import NavigationAbout from "./navigations/about/NavigationAbout";
-
+import { SearchButton } from "@/components/header/components/shared/SearchButton";
 interface Props {
   activePath: string;
 }
@@ -118,11 +118,13 @@ const DesktopHeader: FC<Props> = memo(({ activePath }) => {
           {NAVIGATION_LINKS.map(renderNavigationItem)}
         </NavigationMenuList>
 
-        <div className="flex flex-1 justify-end gap-2">
+        <div className="flex flex-1 items-center justify-end gap-2">
+          <SearchButton />
+          <span className="mx-2 flex h-4 w-px bg-border" />
           <ThemeToggle />
         </div>
       </div>
-    </NavigationMenu>
+    </NavigationMenu> 
   );
 });
 
