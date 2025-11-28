@@ -9,7 +9,7 @@ const NavigationAbout = () => {
   const aboutLinks = aboutSection?.subNavigationLinks || [];
 
   return (
-    <div className="divide-border grid w-[540px] grid-cols-[60%_40%] divide-x">
+    <div className="grid w-[540px] grid-cols-[60%_40%] divide-x divide-dashed">
       <div className="flex flex-col gap-4 p-4">
         {aboutLinks.map((item) => (
           <CardItem
