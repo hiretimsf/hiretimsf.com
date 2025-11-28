@@ -1,5 +1,5 @@
 import { truncateDescription } from "@/lib/seo";
-import { NavigationLinkType } from "@/types";
+import type { NavigationLinkType } from "@/types";
 import {
   UserIcon as AboutMeIcon,
   RssIcon as BlogIcon,
@@ -9,7 +9,7 @@ import {
   FileTextIcon as ResumeIcon
 } from "lucide-react";
 
-const navigationLinks: NavigationLinkType[] = [
+const NAVIGATION_LINKS: NavigationLinkType[] = [
   {
     icon: HomeIcon,
     href: "/",
@@ -52,4 +52,4 @@ const navigationLinks: NavigationLinkType[] = [
   },
 ];
 
-export default navigationLinks;
+export default NAVIGATION_LINKS;

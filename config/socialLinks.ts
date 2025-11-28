@@ -6,39 +6,39 @@ import {
   FaLinkedin as LinkedInIcon,
   FaXTwitter as XPlatformIcon,
 } from "react-icons/fa6";
-import { SocialLinkType } from "@/types";
+import type { SocialLinkType } from "@/types";
 
-const socialLinks: SocialLinkType[] = [
+const SOCIAL_LINKS: SocialLinkType[] = [
   {
     href: "https://www.strava.com/athletes/128944314",
     icon: StravaIcon,
     label: "Strava",
   },
   {
-    href: "mailto:timtb.dev@gmail.com",
+    href: "mailto:hiretimsf@gmail.com",
     icon: EmailIcon,
     label: "Email",
   },
   {
-    href: "https://x.com/hire_tim_com",
+    href: "https://x.com/hiretimsf",
     icon: XPlatformIcon,
     label: "X (Twitter)",
   },
   {
-    href: "https://github.com/timtbdev",
+    href: "https://github.com/hiretimsf",
     icon: GitHubIcon,
     label: "GitHub",
   },
   {
-    href: "https://www.linkedin.com/in/timtbdev/",
+    href: "https://www.linkedin.com/in/hiretimsf/",
     icon: LinkedInIcon,
     label: "LinkedIn",
   },
   {
-    href: "https://www.facebook.com/timtbaz/",
+    href: "https://www.facebook.com/hiretimsf/",
     icon: FacebookIcon,
     label: "Facebook",
   },
 ];
 
-export default socialLinks;
+export default SOCIAL_LINKS;

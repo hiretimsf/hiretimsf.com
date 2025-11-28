@@ -2,9 +2,10 @@
 
 import ProgressBar from "@/components/header/components/shared/ProgressBar";
 import { usePathname } from "next/navigation";
-import { FC, useEffect, useState } from "react";
+import type { FC } from "react";
 import DesktopHeader from "@/components/header/components/desktop/DesktopHeader";
 import { Skeleton } from "@/components/ui/skeleton";
+import { useMounted } from "@/hooks/use-mounted";
 
 interface Props {
   showProgressBar?: boolean;
@@ -26,11 +27,7 @@ const HeaderSkeleton = () => (
 
 const SiteHeader: FC<Props> = ({ showProgressBar = false }) => {
   const path = usePathname();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  const mounted = useMounted();
 
   return (
     <div className="sticky inset-x-0 top-0 z-50">

@@ -24,8 +24,16 @@
 		"dev": "next dev --turbopack",
 		"build": "next build --turbopack",
 		"start": "next start",
-		"lint": "biome check",
-		"format": "biome format --write"
+		"format": "biome format --write",
+		"preview": "next build && next start",
+		"lint": "eslint .",
+		"lint:fix": "eslint --fix .",
+		"check-types": "tsc --noEmit --pretty",
+		"format:check": "prettier --check \"**/*.{ts,tsx,mdx}\" --cache",
+		"format:write": "prettier --write \"**/*.{ts,tsx,mdx}\" --cache",
+		"upgrade:next": "npx @next/codemod@latest upgrade latest",
+		"upgrade:tailwind": "npx @tailwindcss/upgrade@latest",
+		"prepare": "husky"
 	},
 	"dependencies": {
 		"@bprogress/next": "^3.2.12",
@@ -93,6 +101,7 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "2.3.8",
+		"@eslint/eslintrc": "^3.3.3",
 		"@ianvs/prettier-plugin-sort-imports": "^4.7.0",
 		"@tailwindcss/postcss": "^4",
 		"@tailwindcss/typography": "^0.5.19",
@@ -100,6 +109,11 @@
 		"@types/node": "^24",
 		"@types/react": "^19",
 		"@types/react-dom": "^19",
+		"eslint": "^9.39.1",
+		"eslint-config-next": "16.0.5",
+		"eslint-config-prettier": "^10.1.8",
+		"husky": "^9.1.7",
+		"lint-staged": "^16.2.7",
 		"prettier": "^3.7.1",
 		"prettier-plugin-tailwindcss": "^0.7.1",
 		"shadcn": "3.5.1",

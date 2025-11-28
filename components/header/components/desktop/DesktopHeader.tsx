@@ -10,10 +10,11 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { Skeleton } from "@/components/ui/skeleton";
-import navigationLinks from "@/components/header/data/navigationLinks";
+import NAVIGATION_LINKS from "@/config/navigationLinks";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import React, { FC, memo, Suspense, useCallback } from "react";
+import type { FC} from "react";
+import React, { memo, Suspense, useCallback } from "react";
 import LogoButton from "@/components/header/components/shared/LogoButton";
 import ThemeToggle from "@/components/header/components/shared/ThemeToggle";
 import NavigationAbout from "./navigations/about/NavigationAbout";
@@ -58,7 +59,7 @@ const DesktopHeader: FC<Props> = memo(({ activePath }) => {
   );
 
   const renderNavigationItem = useCallback(
-    (link: (typeof navigationLinks)[0]) => {
+    (link: (typeof NAVIGATION_LINKS)[0]) => {
       const isDropdown =
         link.subNavigationLinks && link.subNavigationLinks.length > 0;
 
@@ -114,7 +115,7 @@ const DesktopHeader: FC<Props> = memo(({ activePath }) => {
           className="flex items-center gap-5"
           aria-label="Main navigation"
         >
-          {navigationLinks.map(renderNavigationItem)}
+          {NAVIGATION_LINKS.map(renderNavigationItem)}
         </NavigationMenuList>
 
         <div className="flex flex-1 justify-end gap-2">

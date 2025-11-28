@@ -4,12 +4,12 @@ import { Button } from "@/components/ui/button";
 import { META_THEME_COLORS } from "@/config/theme";
 import { useMetaColor } from "@/hooks/use-meta-color";
 import { useSound } from "@/hooks/use-sound";
-import { MoonIcon } from "@/components/header/icons/MoonIcon";
-import { SunIcon } from "@/components/header/icons/SunIcon";
+import { MoonIcon } from "@/icons/MoonIcon";
+import { SunIcon } from "@/icons/SunIcon";
 import { useTheme } from "next-themes";
 import { useCallback } from "react";
 
-const ThemeToggle = () => {
+const ThemeToggle = () => { 
   const { resolvedTheme, setTheme } = useTheme();
 
   const { setMetaColor } = useMetaColor();

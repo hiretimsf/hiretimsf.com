@@ -1,11 +1,11 @@
-import navigationLinks from "@/components/header/data/navigationLinks";
-import socialLinks from "@/components/header/data/socialLinks";
+import NAVIGATION_LINKS from "@/config/navigationLinks";
+import SOCIAL_LINKS from "@/config/socialLinks";
 import { CircleUserIcon } from "lucide-react";
 import CardItem from "./CardItem";
 import SocialLink from "./SocialLink";
 
 const NavigationAbout = () => {
-  const aboutSection = navigationLinks.find((item) => item.label === "About");
+  const aboutSection = NAVIGATION_LINKS.find((item) => item.label === "About");
   const aboutLinks = aboutSection?.subNavigationLinks || [];
 
   return (
@@ -26,7 +26,7 @@ const NavigationAbout = () => {
       </div>
       <div className="px-6 py-4">
         <div className="grid grid-cols-1">
-          {socialLinks.map((link) => (
+          {SOCIAL_LINKS.map((link) => (
             <SocialLink key={link.href} {...link} />
           ))}
         </div>
