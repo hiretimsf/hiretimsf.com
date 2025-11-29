@@ -9,6 +9,10 @@ import { useMotionValueEvent, useScroll } from "motion/react";
 import { usePathname } from "next/navigation";
 import { useState, type FC } from "react";
 
+const MobileHeader = dynamic(() => import("@/components/header/components/mobile/MobileHeader"), {
+  ssr: false,
+});
+
 const DesktopHeader = dynamic(() => import("@/components/header/components/desktop/DesktopHeader"), {
   ssr: false,
 });
@@ -45,14 +49,14 @@ const SiteHeader: FC<Props> = ({ showProgressBar = false }) => {
     <div
       data-affix={affix}
       className={cn(
-        "sticky inset-x-0 top-0 z-50 mx-auto flex h-12 max-w-5xl items-center justify-between gap-2 border-x border-edge bg-background px-2 screen-line-before screen-line-after after:z-1 after:transition-[background-color]",
+        "sticky inset-x-0 top-0 z-50 mx-auto flex max-w-5xl items-center justify-between gap-2 border-x border-edge bg-background px-2 screen-line-before screen-line-after after:z-1 after:transition-[background-color]",
         "data-[affix=true]:shadow-[0_0_16px_0_black]/8 dark:data-[affix=true]:shadow-[0_0_16px_0_black]",
         "transition-shadow duration-300"
       )}
     >
       <div className="relative mx-auto w-full px-3 lg:px-4 xl:px-0">
         {mounted ? <DesktopHeader activePath={path} /> : <HeaderSkeleton />}
-        {/* <MobileHeader currentPath={path} /> */}
+        <MobileHeader currentPath={path} />
       </div>
       {showProgressBar && <ProgressBar />}
     </div>

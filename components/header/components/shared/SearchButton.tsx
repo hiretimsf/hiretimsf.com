@@ -356,3 +356,5 @@ function CommandMenuFooter() {
     </>
   );
 }
+
+export default SearchButton;
