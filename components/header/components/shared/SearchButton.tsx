@@ -1,10 +1,5 @@
 "use client";
 
-import React, { useCallback, useEffect, useState } from "react";
-import Image from "next/image";
-import { useRouter } from "next/navigation";
-import { useTheme } from "next-themes";
-import { useHotkeys } from "react-hotkeys-hook";
 import { useCommandState } from "cmdk";
 import {
   CornerDownLeftIcon,
@@ -13,6 +8,11 @@ import {
   SunMediumIcon,
   type LucideProps,
 } from "lucide-react";
+import { useTheme } from "next-themes";
+import Image from "next/image";
+import { useRouter } from "next/navigation";
+import React, { useCallback, useEffect, useState } from "react";
+import { useHotkeys } from "react-hotkeys-hook";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -24,7 +24,7 @@ import {
   CommandList,
   CommandSeparator,
 } from "@/components/ui/command";
-import { Kbd, KbdGroup } from "@/components/ui/kbd";
+import { Kbd } from "@/components/ui/kbd";
 import { Separator } from "@/components/ui/separator";
 import NAVIGATION_LINKS from "@/config/navigationLinks";
 import SOCIAL_LINKS from "@/config/socialLinks";
@@ -161,9 +161,10 @@ export function SearchButton() {
   return (
     <>
       {/* Trigger Button */}
+
       <Button
-        variant="secondary"
-        className="h-9 rounded-full border border-input bg-white text-muted-foreground shadow-xs select-none hover:bg-white dark:bg-input/30 dark:hover:bg-input/30"
+        variant="ghost"
+        size="icon"
         onClick={() => {
           setOpen(true);
           trackEvent({
@@ -171,21 +172,9 @@ export function SearchButton() {
             properties: { method: "click" },
           });
         }}
+        className="rounded-md bg-transparent hover:bg-gray-100 text-foreground dark:hover:bg-zinc-900"
       >
-        <SearchIcon aria-hidden className="size-4 shrink-0 text-foreground"/>
-        <span className="font-sans text-sm/4 font-medium sm:hidden">
-          Search
-        </span>
-        
-        {/* Keyboard Shortcuts Hints */}
-        <KbdGroup className="hidden sm:in-[.os-macos_&]:flex">
-          <Kbd className="w-6 min-w-6 text-foreground">⌘</Kbd>
-          <Kbd className="w-6 min-w-6 text-foreground">K</Kbd>
-        </KbdGroup>
-        <KbdGroup className="hidden sm:not-[.os-macos_&]:flex">
-          <Kbd className="text-foreground">Ctrl</Kbd>
-          <Kbd className="w-6 min-w-6 text-foreground">K</Kbd>
-        </KbdGroup>
+        <SearchIcon aria-hidden className="size-5 shrink-0 text-foreground" />
       </Button>
 
       {/* Command Menu Dialog */}

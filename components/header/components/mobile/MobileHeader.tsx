@@ -2,7 +2,7 @@ import dynamic from "next/dynamic";
 import { NavigationMenu } from "@/components/ui/navigation-menu";
 import type { FC } from "react";
 
-const MenuButton = dynamic(() => import("./menu-button"), {
+const MenuButton = dynamic(() => import("./MenuButton"), {
   ssr: false,
 });
 

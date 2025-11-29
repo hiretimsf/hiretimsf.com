@@ -1,5 +1,6 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import {
   Accordion,
   AccordionContent,
@@ -21,7 +22,10 @@ import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import type { FC } from "react";
 import React, { memo, useCallback, useState } from "react";
-import SubNavigationItem from "./sub-navigation-item";
+
+const SubNavigationItem = dynamic(() => import("@/components/header/components/mobile/SubNavigationItem"), {
+  ssr: false,
+}); 
 
 interface Props {
   currentPath: string;
@@ -48,7 +52,7 @@ const MenuButton: FC<Props> = memo(({ currentPath, className }) => {
   }, []);
 
   const handleNavigation = useCallback(
-    (href: string) => {
+    () => {
       setIsLoading(true);
       toggleSheet();
       // Reset loading state after a short delay to ensure smooth transition
@@ -116,7 +120,7 @@ const MenuButton: FC<Props> = memo(({ currentPath, className }) => {
                             <li key={subItem.href}>
                               <SubNavigationItem
                                 href={subItem.href}
-                                onClick={() => handleNavigation(subItem.href)}
+                                onClick={() => handleNavigation()}
                                 label={subItem.label ?? ""}
                                 description={subItem.description ?? ""}
                                 icon={
@@ -134,7 +138,7 @@ const MenuButton: FC<Props> = memo(({ currentPath, className }) => {
                   </AccordionItem>
                 ) : (
                   <li key={menuItem.href} className="list-none">
-                    <Link
+                      <Link
                       href={menuItem.href}
                       className={cn(
                         "group border-border inline-flex w-full gap-2 border-b px-6 py-4",
@@ -143,7 +147,7 @@ const MenuButton: FC<Props> = memo(({ currentPath, className }) => {
                           "hover:bg-accent hover:shadow-xs": !isActive,
                         },
                       )}
-                      onClick={() => handleNavigation(menuItem.href)}
+                      onClick={() => handleNavigation()}
                       aria-current={isActive ? "page" : undefined}
                     >
                       <span className="text-foreground group-hover:text-accent-foreground font-medium">
