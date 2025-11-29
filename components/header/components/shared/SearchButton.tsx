@@ -173,7 +173,7 @@ export function SearchButton() {
             properties: { method: "click" },
           });
         }}
-        className="corner-squircle rounded-xl bg-transparent hover:bg-gray-100 text-foreground dark:hover:bg-zinc-900"
+        className="corner-squircle rounded-xl text-foreground "
       >
         <SearchIcon aria-hidden className="size-5 shrink-0 text-foreground" />
       </Button>

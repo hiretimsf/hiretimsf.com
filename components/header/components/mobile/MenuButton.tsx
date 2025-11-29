@@ -69,15 +69,15 @@ const MenuButton: FC<Props> = memo(({ currentPath, className }) => {
           onKeyDown={handleKeyDown}
           variant="ghost"
           size="icon"
-          className={cn("group hover:bg-accent rounded-full", className)}
+          className={cn("group hover:bg-accent rounded-xl corner-squircle", className)}
           aria-label={isOpen ? "Close menu" : "Open menu"}
           aria-expanded={isOpen}
           aria-controls="mobile-navigation"
         >
           {isOpen ? (
-            <X className="text-foreground group-hover:text-accent-foreground size-6" />
+            <X className="text-foreground group-hover:text-accent-foreground size-5" />
           ) : (
-            <Menu className="text-foreground group-hover:text-accent-foreground size-6" />
+            <Menu className="text-foreground group-hover:text-accent-foreground size-5" />
           )}
         </Button>
       </SheetTrigger>

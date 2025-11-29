@@ -27,6 +27,10 @@ const LogoButton = dynamic(() => import("@/components/header/components/shared/L
 const ThemeToggle = dynamic(() => import("@/components/header/components/shared/ThemeToggle"), {
   ssr: false,
 });
+
+const GithubButton = dynamic(() => import("@/components/header/components/shared/GithubButton"), {
+  ssr: false,
+});
 interface Props {
   activePath: string;
 }
@@ -127,6 +131,8 @@ const DesktopHeader: FC<Props> = memo(({ activePath }) => {
         </NavigationMenuList>
 
         <div className="flex flex-1 items-center justify-end gap-1.5">
+          <GithubButton />
+          <span className="mx-2 flex h-4 w-px bg-border" />
           <SearchButton />
           <span className="mx-2 flex h-4 w-px bg-border" />
           <ThemeToggle />
