@@ -126,7 +126,7 @@ const DesktopHeader: FC<Props> = memo(({ activePath }) => {
           {NAVIGATION_LINKS.map(renderNavigationItem)}
         </NavigationMenuList>
 
-        <div className="flex flex-1 items-center justify-end gap-2">
+        <div className="flex flex-1 items-center justify-end gap-1.5">
           <SearchButton />
           <span className="mx-2 flex h-4 w-px bg-border" />
           <ThemeToggle />

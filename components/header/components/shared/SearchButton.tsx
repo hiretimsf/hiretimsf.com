@@ -166,13 +166,14 @@ export function SearchButton() {
         variant="ghost"
         size="icon"
         onClick={() => {
+          playClick(0.5);
           setOpen(true);
           trackEvent({
             name: "open_command_menu",
             properties: { method: "click" },
           });
         }}
-        className="rounded-md bg-transparent hover:bg-gray-100 text-foreground dark:hover:bg-zinc-900"
+        className="corner-squircle rounded-xl bg-transparent hover:bg-gray-100 text-foreground dark:hover:bg-zinc-900"
       >
         <SearchIcon aria-hidden className="size-5 shrink-0 text-foreground" />
       </Button>
