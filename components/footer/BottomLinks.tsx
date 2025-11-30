@@ -8,47 +8,49 @@ import { LuBrain as FaBrain } from "react-icons/lu";
 
 export default function BottomLinks() {
   return (
-    <div className="mx-auto flex items-center justify-center gap-3 border-x border-edge bg-background px-4">
-      <FooterLink
-        href={`${SITE_INFO.url}/llms.txt`}
-        target="_blank"
-        icon={
-          <FaBrain
-            aria-hidden="true"
-            className={cn(defaultStyle, "size-[18px]")}
-          />
-        }
-        label="llms.txt"
-        ariaLabel="View llms.txt"
-      />
+    <div className="screen-line-after max-w-5xl w-full mx-auto border-x border-edge">
+      <div className="mx-auto max-w-md flex items-center justify-center gap-3 px-4 border-x border-edge">
+        <FooterLink
+          href={`${SITE_INFO.url}/llms.txt`}
+          target="_blank"
+          icon={
+            <FaBrain
+              aria-hidden="true"
+              className={cn(defaultStyle, "size-[18px]")}
+            />
+          }
+          label="llms.txt"
+          ariaLabel="View llms.txt"
+        />
 
-      <Separator />
+        <Separator />
 
-      <FooterLink
-        href="/sitemap.xml"
-        icon={
-          <FaSitemap
-            aria-hidden="true"
-            className={cn(defaultStyle, "size-[18px]")}
-          />
-        }
-        label="Sitemap"
-        ariaLabel="View website sitemap"
-      />
+        <FooterLink
+          href="/sitemap.xml"
+          icon={
+            <FaSitemap
+              aria-hidden="true"
+              className={cn(defaultStyle, "size-[18px]")}
+            />
+          }
+          label="Sitemap"
+          ariaLabel="View website sitemap"
+        />
 
-      <Separator />
+        <Separator />
 
-      <FooterLink
-        href="/rss.xml"
-        icon={
-          <FaSquareRss
-            aria-hidden="true"
-            className={cn(defaultStyle, "size-[18px]")}
-          />
-        }
-        label="RSS Feed"
-        ariaLabel="Subscribe to RSS feed"
-      />
+        <FooterLink
+          href="/rss.xml"
+          icon={
+            <FaSquareRss
+              aria-hidden="true"
+              className={cn(defaultStyle, "size-[18px]")}
+            />
+          }
+          label="RSS Feed"
+          ariaLabel="Subscribe to RSS feed"
+        />
+      </div>
     </div>
   );
 }

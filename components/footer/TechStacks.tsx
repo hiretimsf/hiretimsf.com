@@ -19,8 +19,8 @@ const techLinks: { label: string; href: string }[] = [
 
 export default function TechStacks() {
   return (
-    <div className="mx-auto mt-4 max-w-xl flex-row items-center justify-center mb-4 px-4">
-      <p className="text-muted-foreground hidden text-center text-sm leading-5 sm:block">
+    <div className="screen-line-before screen-line-after max-w-5xl w-full mx-auto border-x border-edge py-4">
+      <p className="text-muted-foreground hidden text-center text-sm leading-5 sm:block max-w-xl mx-auto">
         Loosely designed in{" "}
         <Link
           href={techLinks[0].href}
