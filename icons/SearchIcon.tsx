@@ -13,8 +13,8 @@ export interface SearchIconHandle {
 }
 
 interface SearchIconProps extends HTMLAttributes<HTMLDivElement> {
-    size?: string;
-    className?: string;
+	size?: string;
+	className?: string;
 }
 
 const svgVariants: Variants = {
@@ -32,7 +32,16 @@ const svgTransition: Transition = {
 };
 
 const SearchIcon = forwardRef<SearchIconHandle, SearchIconProps>(
-	({ onMouseEnter, onMouseLeave, className = "size-5 shrink-0 text-foreground", size = 24, ...props }, ref) => {
+	(
+		{
+			onMouseEnter,
+			onMouseLeave,
+			className = "size-5 shrink-0 text-foreground",
+			size = 24,
+			...props
+		},
+		ref,
+	) => {
 		const controls = useAnimation();
 		const isControlledRef = useRef(false);
 

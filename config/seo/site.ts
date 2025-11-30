@@ -6,4 +6,5 @@ export const SITE_INFO = {
 	alternateName: "Tumur Bazarragchaa",
 };
 
-export const SOURCE_CODE_GITHUB_REPO = "https://github.com/hiretimsf/hiretimsf.com";
+export const SOURCE_CODE_GITHUB_REPO =
+	"https://github.com/hiretimsf/hiretimsf.com";
