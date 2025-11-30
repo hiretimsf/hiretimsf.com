@@ -201,7 +201,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
 					}}
 				/>
 			</head>
-			<body>
+			<body suppressHydrationWarning>
 				<Providers>
 					<NuqsAdapter>
 						<ConsentManager>{children}</ConsentManager>
