@@ -1,11 +1,9 @@
 "use client";
 
-import dynamic from "next/dynamic";
 import ProgressBar from "@/components/header/shared/ProgressBar";
-import { Skeleton } from "@/components/ui/skeleton";
-import { useMounted } from "@/hooks/use-mounted";
 import { cn } from "@/lib/utils";
 import { useMotionValueEvent, useScroll } from "motion/react";
+import dynamic from "next/dynamic";
 import { usePathname } from "next/navigation";
 import { useState, type FC } from "react";
 
@@ -27,22 +25,8 @@ interface Props {
   showProgressBar?: boolean;
 }
 
-const HeaderSkeleton = () => (
-  <div className="mx-auto hidden h-18 w-full max-w-5xl items-center justify-between md:flex">
-    <Skeleton className="h-9 w-24" />
-    <div className="flex items-center gap-5">
-      <Skeleton className="h-9 w-16" />
-      <Skeleton className="h-9 w-16" />
-      <Skeleton className="h-9 w-20" />
-      <Skeleton className="h-9 w-14" />
-    </div>
-    <Skeleton className="h-9 w-9" />
-  </div>
-);
-
 const SiteHeader: FC<Props> = ({ showProgressBar = false }) => {
   const path = usePathname();
-  const mounted = useMounted();
   const { scrollY } = useScroll();
 
   const [affix, setAffix] = useState(false);
@@ -65,7 +49,7 @@ const SiteHeader: FC<Props> = ({ showProgressBar = false }) => {
           "transition-shadow duration-300",
         )}
       >
-        {mounted ? <DesktopHeader activePath={path} /> : <HeaderSkeleton />}
+        <DesktopHeader activePath={path} />
         <MobileHeader currentPath={path} />
       </div>
       {showProgressBar && <ProgressBar />}
