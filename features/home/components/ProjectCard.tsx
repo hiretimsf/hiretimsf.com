@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { GitHubStarsButton } from "@/features/home/components/GithubStarsButton";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -11,82 +10,73 @@ import {
 } from "@/components/ui/card";
 import type { ProjectItemType } from "@/features/home/types/ProjectItem";
 import Link from "next/link";
+import BrowserWrapper from "@/features/home/components/BrowserWrapper";
 
 interface ProjectCardProps {
   project: ProjectItemType;
   index?: number;
 }
 
-function getGitHubInfo(url: string) {
-  try {
-    const urlToParse = url.startsWith("http") ? url : `https://${url}`;
-    const { hostname, pathname } = new URL(urlToParse);
-
-    if (!hostname.includes("github.com")) return null;
-
-    const parts = pathname.split("/").filter(Boolean);
-    if (parts.length >= 2) {
-      return { username: parts[0], repo: parts[1] };
-    }
-  } catch {
-    return null;
-  }
-  return null;
-}
-
 export default function ProjectCard({ project, index }: ProjectCardProps) {
-  const gitHubInfo = project.github ? getGitHubInfo(project.github) : null;
-
   return (
     <Card
-      key={`${project.title}-${index}`}
-      className="group h-full gap-0 rounded-none rounded-b-md border border-gray-200 py-0 shadow-lg transition-all duration-300 hover:border-gray-300"
+      className="h-full gap-0 rounded-md border-x border-b border-border-edge py-0 shadow-lg transition-all duration-300"
       role="article"
       aria-labelledby={`project-title-${index}`}
     >
-      <div className="relative aspect-video w-full overflow-hidden">
-        <Image
-          alt={project.imageAlt || project.title || "Project image"}
-          src={project.imageUrl || "/images/app-placeholder.jpg"}
-          width={1000}
-          height={500}
-          className="h-full w-full rounded-none object-cover"
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          priority={index !== undefined && index < 3}
-        />
-      </div>
-      <CardHeader>
-        <CardTitle
-          id={`project-title-${index}`}
-          className="text-panda-text mt-4 text-lg/6"
-        >
-          {project.title}
-        </CardTitle>
-        <CardDescription className="text-panda-text/80 text-sm/6">
-          {project.date ?? null}
-        </CardDescription>
-      </CardHeader>
-      <CardContent>
-        <CardDescription className="text-panda-text line-clamp-2 text-sm/6">
-          {project.description}
-        </CardDescription>
-      </CardContent>
-      <CardFooter className="mt-6 mb-4 flex-col gap-2">
-        {/* Live Demo */}
-        {project.liveDemo && project.liveDemo !== "#" ? (
-          <Button asChild>
-            <Link href={project.liveDemo}>Live Demo</Link>
-          </Button>
-        ) : null}
-        {/* GitHub */}
-        {project.github ? (
-          <GitHubStarsButton
-            href={project.github}
-            username={gitHubInfo?.username}
-            repo={gitHubInfo?.repo}
+      <BrowserWrapper>
+        <div className="relative aspect-video w-full overflow-hidden">
+          <Image
+            alt={project.imageAlt || project.title || "Project image"}
+            src={project.imageUrl || "/images/app-placeholder.jpg"}
+            width={1000}
+            height={500}
+            className="h-full w-full rounded-none object-cover"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            priority={index !== undefined && index < 3}
           />
-        ) : null}
-      </CardFooter>
+        </div>
+      </BrowserWrapper>
+      <div className="flex w-full items-center justify-between">
+        <div className="flex flex-col flex-none w-6 border-r border-border-edge border-dashed h-full" />
+        <div className="flex flex-col flex-1">
+          <CardHeader>
+            <CardTitle
+              id={`project-title-${index}`}
+              className="text-foreground py-2 text-lg/6 text-left border-b border-dashed border-border-edge px-2"
+            >
+              {project.title}
+            </CardTitle>
+            <CardDescription className="text-muted-foreground text-sm/6 text-left border-b border-dashed border-border-edge pb-2 px-2">
+              {project.date ?? null}
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <CardDescription className="px-2 py-2 border-b border-dashed border-border-edge">
+              <span className="text-balance text-foreground line-clamp-3 text-sm/6 text-left">
+                {project.description}
+              </span>
+            </CardDescription>
+          </CardContent>
+          <CardFooter className="flex flex-col w-full p-0 items-stretch">
+            {project.liveDemo && project.liveDemo !== "#" && (
+              <div className="flex w-full border-b border-dashed border-border-edge py-2 px-2">
+                <Button asChild className="w-full" variant="outline">
+                  <Link href={project.liveDemo}>Live Demo</Link>
+                </Button>
+              </div>
+            )}
+            {project.github && (
+              <div className="flex w-full py-2 px-2">
+                <Button asChild className="w-full" variant="outline">
+                  <Link href={project.github}>GitHub</Link>
+                </Button>
+              </div>
+            )}
+          </CardFooter>
+        </div>
+        <div className="flex flex-none w-6 border-l border-border-edge border-dashed h-full" />
+      </div>
     </Card>
   );
 }

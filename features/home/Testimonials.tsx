@@ -2,12 +2,9 @@ import BackgroundDots from "@/components/BackgroundDots";
 import MasonryGrid from "@/features/home/components/MasonryGrid";
 import ShoutoutItem from "@/features/home/components/ShoutOutItem";
 import type { ShoutoutItemType } from "@/features/home/types/ShoutOutItem";
+import { shoutouts } from "@/features/home/data/shoutouts";
 
-type TestimonialsProps = {
-  shoutouts: ShoutoutItemType[];
-};
-
-export default function Testimonials({ shoutouts }: TestimonialsProps) {
+export default function Testimonials() {
   return (
     <MasonryGrid className="relative mx-auto max-w-7xl px-6 py-8 lg:px-8">
       {shoutouts.map((item: ShoutoutItemType, index: number) => (

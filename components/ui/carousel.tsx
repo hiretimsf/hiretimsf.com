@@ -1,13 +1,12 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import useEmblaCarousel, {
   type UseEmblaCarouselType,
 } from "embla-carousel-react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import * as React from "react";
-
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
 
 type CarouselApi = UseEmblaCarouselType[1];
 type UseCarouselParameters = Parameters<typeof useEmblaCarousel>;
@@ -118,16 +117,16 @@ function Carousel({
         canScrollNext,
       }}
     >
-      <div
+      {/* biome-ignore lint/a11y/useAriaPropsSupportedByRole: Carousel structure standard */}
+      <section
         onKeyDownCapture={handleKeyDown}
         className={cn("relative", className)}
-        role="region"
         aria-roledescription="carousel"
         data-slot="carousel"
         {...props}
       >
         {children}
-      </div>
+      </section>
     </CarouselContext.Provider>
   );
 }
@@ -157,6 +156,7 @@ function CarouselItem({ className, ...props }: React.ComponentProps<"div">) {
   const { orientation } = useCarousel();
 
   return (
+    // biome-ignore lint/a11y/useSemanticElements: Carousel item structure standard
     <div
       role="group"
       aria-roledescription="slide"
@@ -231,11 +231,71 @@ function CarouselNext({
   );
 }
 
+function CarouselIndicator({
+  className,
+  totalSlides,
+  ...props
+}: React.ComponentProps<"div"> & { totalSlides?: number }) {
+  const { api, orientation } = useCarousel();
+  const [selectedIndex, setSelectedIndex] = React.useState(0);
+  const [slidesCount, setSlidesCount] = React.useState(0);
+
+  React.useEffect(() => {
+    if (!api) return;
+
+    setSelectedIndex(api.selectedScrollSnap());
+    setSlidesCount(api.scrollSnapList().length);
+
+    const onSelect = () => {
+      setSelectedIndex(api.selectedScrollSnap());
+    };
+
+    api.on("select", onSelect);
+
+    return () => {
+      api.off("select", onSelect);
+    };
+  }, [api]);
+
+  const slides = totalSlides ?? slidesCount;
+
+  if (slides === 0) return null;
+
+  return (
+    <div
+      data-slot="carousel-indicator"
+      className={cn(
+        "flex items-center justify-center gap-1",
+        orientation === "horizontal" ? "mt-4" : "ml-4",
+        className,
+      )}
+      {...props}
+    >
+      {Array.from({ length: slides }).map((_, index) => (
+        <button
+          // biome-ignore lint/suspicious/noArrayIndexKey: index is the only stable key here
+          key={index}
+          type="button"
+          aria-label={`Go to slide ${index + 1}`}
+          onClick={() => api?.scrollTo(index)}
+          className={cn(
+            "h-2 rounded-full transition-all",
+            selectedIndex === index
+              ? "bg-panda-text/80 w-6"
+              : "bg-panda-text/50 hover:bg-panda-text/70 w-2",
+          )}
+        />
+      ))}
+    </div>
+  );
+}
+
 export {
-  Carousel,
   type CarouselApi,
+  Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
   CarouselPrevious,
+  CarouselNext,
+  CarouselIndicator,
 };

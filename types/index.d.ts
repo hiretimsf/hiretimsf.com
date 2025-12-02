@@ -68,3 +68,55 @@ export type ProjectSubNavigationLinkType = {
   href: string;
   icon?: IconType;
 };
+
+export type ExperienceItemType = {
+  id: string;
+  companyName: string;
+  companyWebsite?: string;
+  companyLogo?: string;
+  companyLogoAlt?: string;
+  companyLocation?: string;
+  country?: flag;
+  positions: ExperiencePositionItemType[];
+  isCurrentEmployer?: boolean;
+  projects?: ProjectItemType[];
+};
+
+export type ProjectItemType = {
+  id: number;
+  title: string;
+  date?: string;
+  description: string;
+  imageUrl: string;
+  imageAlt: string;
+  github?: string;
+  liveDemo?: string;
+  video?: string;
+  videoAlt?: string;
+  embed?: string;
+  embedAlt?: string;
+  skills?: string[];
+  category?: string;
+  current?: boolean;
+  upcoming?: boolean;
+  featured?: boolean;
+  weight?: number;
+};
+
+export type ExperiencePositionItemType = {
+  id: string;
+  title: string;
+  employmentPeriod: string;
+  employmentDuration?: string;
+  employmentType?: string;
+  description?: string;
+  icon?: LucideIcon | IconType | React.ReactNode;
+  skills?: string[];
+  isExpanded?: boolean;
+};
+
+export interface BulletListItem {
+  name?: string;
+  description: string;
+  href?: string;
+}

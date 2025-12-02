@@ -1,6 +1,6 @@
-import type { ProjectItemType } from "@/features/home/types/ProjectItem";
 import BackgroundDots from "@/components/BackgroundDots";
 import ProjectCard from "@/features/home/components/ProjectCard";
+import type { ProjectItemType } from "@/features/home/types/ProjectItem";
 
 interface FeaturedAppsProps {
   projects: ProjectItemType[];

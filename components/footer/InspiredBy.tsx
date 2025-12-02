@@ -9,21 +9,21 @@ export default function InspiredBy() {
       <p className="text-muted-foreground hidden text-center text-sm leading-5 sm:block max-w-xl mx-auto">
         Inspired by{" "}
         <Link
-          href="https://chanhdai.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={defaultClass}
-        >
-          Chanhdai.com
-        </Link>{" "}
-        and{" "}
-        <Link
           href="https://dub.co"
           target="_blank"
           rel="noopener noreferrer"
           className={defaultClass}
         >
           Dub.co
+        </Link>{" "}
+        and{" "}
+        <Link
+          href="https://chanhdai.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={defaultClass}
+        >
+          Chanhdai.com
         </Link>
       </p>
     </div>

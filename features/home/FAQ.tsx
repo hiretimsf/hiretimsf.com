@@ -24,15 +24,15 @@ const FaqSection = ({ className = "" }: FaqSectionProps) => {
       <Accordion
         type="single"
         collapsible
-        className="bg-panda-background mx-auto max-w-xl divide-y divide-dashed divide-gray-200 border-x border-dashed border-gray-200"
+        className="bg-background mx-auto max-w-xl divide-y divide-dashed divide-border-edge border-x border-dashed border-border-edge"
       >
         {FAQ_ITEMS.map((item: FaqItemType, index: number) => (
           // biome-ignore lint/suspicious/noArrayIndexKey: faq items are static
           <AccordionItem key={index} value={`item-${index}`}>
-            <AccordionTrigger className="text-panda-text px-4 text-lg/6 font-semibold hover:no-underline sm:px-6 sm:text-xl/8 lg:px-8">
+            <AccordionTrigger className="text-foreground px-4 text-lg/6 font-semibold hover:no-underline sm:px-6 sm:text-xl/8 lg:px-8 text-left">
               {item.question}
             </AccordionTrigger>
-            <AccordionContent className="text-panda-text px-4 text-base/7 sm:px-6 sm:text-lg/8 lg:px-8">
+            <AccordionContent className="text-foreground px-4 pt-4 text-base/7 sm:px-6 sm:text-lg/8 lg:px-8 text-left border-t border-dashed border-border-edge">
               {item.answer}
             </AccordionContent>
           </AccordionItem>

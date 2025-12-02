@@ -9,9 +9,9 @@ export const FAQ_ITEMS: FaqItemType[] = [
   },
   {
     id: "faq-2",
-    question: "How much Android experience do you have?",
+    question: "How much Frontend and Backend experience do you have?",
     answer:
-      "I have been developing Android apps since 2012 with over 12 years of hands-on experience.",
+      "I have around four years of hands-on frontend development experience with React, Next.js, TailwindCSS, JavaScript, and TypeScript. On the backend, I have about two years of experience working with Node.js, Supabase, REST APIs, and database integration.",
   },
   {
     id: "faq-3",
@@ -26,41 +26,35 @@ export const FAQ_ITEMS: FaqItemType[] = [
   },
   {
     id: "faq-5",
-    question: "Do you have frontend and backend experience?",
-    answer:
-      "Yes. I have built several full stack apps using Next.js and Supabase. I also created a boilerplate to help launch SaaS apps quickly and open sourced it on GitHub.",
-  },
-  {
-    id: "faq-6",
     question: "What is your educational background?",
     answer:
       "I have a Bachelor's degree in Computer Science from the University of Applied Sciences of Mittweida in Germany.",
   },
   {
-    id: "faq-7",
+    id: "faq-6",
     question: "What languages do you speak?",
     answer:
       "I speak English, German, and Mongolian fluently, and a little Russian.",
   },
   {
-    id: "faq-8",
+    id: "faq-7",
     question: "What projects are you most passionate about?",
     answer:
       "I enjoy building projects that make a positive impact. For example, I built a Mongolian Sign Language app to help bridge communication barriers.",
   },
   {
-    id: "faq-9",
+    id: "faq-8",
     question: "What are your hobbies?",
     answer: "I enjoy running outdoors and spending time with my family.",
   },
   {
-    id: "faq-10",
+    id: "faq-9",
     question: "What is next for you in 2025 and beyond?",
     answer:
       "I am exploring Compose Multiplatform for cross platform apps, AI integration, and modern architecture patterns. I want to keep pushing Android development forward.",
   },
   {
-    id: "faq-11",
+    id: "faq-10",
     question: "What is a fun fact about you?",
     answer: "I used to ride a horse to school when I was a kid.",
   },

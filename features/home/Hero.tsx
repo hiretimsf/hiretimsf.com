@@ -87,6 +87,7 @@ export default function Hero({
               height={1000}
               className="h-full w-full object-cover"
               priority
+              unoptimized
             />
           </div>
           <div className="col-span-1 flex items-center border-l border-dashed border-border-edge">
@@ -96,7 +97,7 @@ export default function Hero({
       </div>
 
       {/* Mobile Layout */}
-      <div className="relative mx-auto flex flex-col pb-8 lg:hidden">
+      <div className="relative mx-auto flex flex-col lg:hidden">
         <Image
           alt={imageAlt}
           src={imageSrcMobile}

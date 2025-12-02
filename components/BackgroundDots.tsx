@@ -18,7 +18,7 @@ export default function BackgroundDots({
     <svg
       aria-hidden="true"
       className={cn(
-        "pointer-events-none absolute inset-0 z-[-1] h-full w-full pt-1 text-gray-200/80",
+        "pointer-events-none absolute inset-0 z-[-1] h-full w-full pt-1 text-gray-100/10 dark:text-gray-100/10",
         className,
       )}
       width="100%"

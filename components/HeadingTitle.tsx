@@ -13,7 +13,7 @@ export default function HeadingTitle({
   return (
     <div
       className={cn(
-        "relative mx-auto flex w-full justify-center px-6 py-8 text-gray-200 md:py-4 lg:px-8",
+        "relative mx-auto flex w-full justify-center px-6 py-8 text-muted-foreground/20 md:py-4 lg:px-8",
       )}
     >
       <svg
@@ -62,7 +62,7 @@ export default function HeadingTitle({
       </svg>
       <h2
         className={cn(
-          "text-panda-text decoration-panda-orange relative z-10 mx-auto text-center tracking-tight underline underline-offset-8",
+          "text-foreground relative mx-auto text-center tracking-tight underline underline-offset-8",
           textStyleClassName,
         )}
       >
