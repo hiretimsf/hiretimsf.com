@@ -111,7 +111,11 @@ var featuredApps = defineDocs({
     })
   })
 });
+var about = defineDocs({
+  dir: "features/about/content"
+});
 export {
+  about,
   education,
   experience,
   featuredApps,

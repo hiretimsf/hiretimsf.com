@@ -15,10 +15,10 @@ const HEAD: HeadType[] = [
   {
     page: "About",
     title: truncateTitle(
-      "About Tim | Design Engineer & Pixel-Perfect Developer",
+      "About Tim | Design Engineer & Frontend Developer | 5+ Years Exp",
     ),
     description: truncateDescription(
-      "Passionate Design Engineer exploring new technologies to turn ideas into reality through polished, thoughtfully crafted personal projects.",
+      "Design Engineer with 5+ years experience. Pixel-perfect execution in Next.js, React, & TypeScript. Building high-quality, user-centric web & mobile apps.",
     ),
     slug: "/about",
   },
@@ -40,7 +40,7 @@ const HEAD: HeadType[] = [
   },
   {
     page: "Contact",
-    title: truncateTitle("Contact Tim | Hire a Design Engineer"),
+    title: truncateTitle("Contact Tim | Hire a Design Engineer | 5+ Years Exp"),
     description: truncateDescription(
       "Ready to build high-quality, user-centric applications? Get in touch with Tim for pixel-perfect execution.",
     ),

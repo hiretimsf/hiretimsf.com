@@ -21,6 +21,8 @@ export default function ConsentManager({
         // ignoreGeoLocation: process.env.NODE_ENV === "development", // Useful for development to always view the banner.
       }}
     >
+      <ConsentManagerClient>{children}</ConsentManagerClient>
+
       <CookieBanner
         theme={{
           "banner.card": {
@@ -157,8 +159,6 @@ export default function ConsentManager({
           },
         }}
       />
-
-      <ConsentManagerClient>{children}</ConsentManagerClient>
     </ConsentManagerProvider>
   );
 }

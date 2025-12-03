@@ -115,3 +115,7 @@ export const featuredApps = defineDocs({
     }),
   }),
 });
+
+export const about = defineDocs({
+  dir: "features/about/content",
+});

@@ -6,6 +6,7 @@ import {
   pages,
   projects,
   featuredApps,
+  about,
 } from "@/.source";
 
 const pagesDocs = pages as unknown as { toFumadocsSource: () => unknown };
@@ -17,6 +18,9 @@ const educationDocs = education as unknown as {
   toFumadocsSource: () => unknown;
 };
 const featuredAppsDocs = featuredApps as unknown as {
+  toFumadocsSource: () => unknown;
+};
+const aboutDocs = about as unknown as {
   toFumadocsSource: () => unknown;
 };
 
@@ -83,3 +87,8 @@ export function getFeaturedApps(): ProjectItemType[] {
     };
   });
 }
+
+export const aboutSource = loader({
+  baseUrl: "/about",
+  source: aboutDocs.toFumadocsSource() as Source<SourceConfig>,
+});
