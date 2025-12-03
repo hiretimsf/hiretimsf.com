@@ -1,6 +1,6 @@
 "use client";
 
-import dynamic from "next/dynamic";
+import SubNavigationItem from "@/components/header/mobile/SubNavigationItem";
 import {
   Accordion,
   AccordionContent,
@@ -22,13 +22,6 @@ import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import type { FC } from "react";
 import React, { memo, useCallback, useState } from "react";
-
-const SubNavigationItem = dynamic(
-  () => import("@/components/header/mobile/SubNavigationItem"),
-  {
-    ssr: false,
-  },
-);
 
 interface Props {
   currentPath: string;

@@ -1,4 +1,4 @@
-import ProjectsGrid from "@/components/about/projects-grid";
+import ProjectsGrid from "@/features/about/components/ProjectGrid";
 
 export default function ProjectsToday() {
   const slugs = ["sign-language-kotlin", "runmusic-kotlin"];

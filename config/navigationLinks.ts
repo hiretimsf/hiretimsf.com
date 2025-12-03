@@ -3,10 +3,10 @@ import type { NavigationLinkType } from "@/types";
 import {
   UserIcon as AboutMeIcon,
   RssIcon as BlogIcon,
-  UserPenIcon as ContactIcon,
+  GraduationCapIcon as EducationIcon,
+  BriefcaseIcon as ExperienceIcon,
   HomeIcon,
   ArchiveIcon as ProjectsIcon,
-  FileTextIcon as ResumeIcon,
 } from "lucide-react";
 
 const NAVIGATION_LINKS: NavigationLinkType[] = [
@@ -27,16 +27,16 @@ const NAVIGATION_LINKS: NavigationLinkType[] = [
         icon: AboutMeIcon,
       },
       {
-        href: "/resume",
-        label: "Resume",
-        description: truncateDescription("Experience and education", 30),
-        icon: ResumeIcon,
+        href: "/experience",
+        label: "Experience",
+        description: truncateDescription("Background and Experience", 30),
+        icon: ExperienceIcon,
       },
       {
-        href: "/contact",
-        label: "Contact",
-        description: truncateDescription("Contact me", 30),
-        icon: ContactIcon,
+        href: "/education",
+        label: "Education",
+        description: truncateDescription("Education and certifications", 30),
+        icon: EducationIcon,
       },
     ],
   },

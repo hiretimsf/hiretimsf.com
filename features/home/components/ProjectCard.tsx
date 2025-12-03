@@ -68,7 +68,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
             )}
             {project.github && (
               <div className="flex w-full py-2 px-2">
-                <Button asChild className="w-full" variant="outline">
+                <Button asChild className="w-full">
                   <Link href={project.github}>GitHub</Link>
                 </Button>
               </div>

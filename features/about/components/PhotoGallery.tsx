@@ -9,8 +9,8 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { cn } from "@/lib/utils";
-import dynamic from "next/dynamic";
 import * as React from "react";
+import { PhotoProvider, PhotoView } from "react-photo-view";
 
 /**
  * Custom hook for media queries with proper SSR handling
@@ -40,15 +40,6 @@ const useMediaQuery = (query: string): boolean | undefined => {
 
   return matches;
 };
-
-const PhotoProvider = dynamic(
-  () => import("react-photo-view").then((mod) => mod.PhotoProvider),
-  { ssr: false },
-);
-const PhotoView = dynamic(
-  () => import("react-photo-view").then((mod) => mod.PhotoView),
-  { ssr: false },
-);
 
 interface Photo {
   src: string;

@@ -13,7 +13,7 @@ import { useRouter } from "next/navigation";
 import React, { useCallback, useEffect, useState } from "react";
 import { useHotkeys } from "react-hotkeys-hook";
 
-import SearchIcon from "@/icons/SearchIcon";
+import { SearchIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   CommandDialog,

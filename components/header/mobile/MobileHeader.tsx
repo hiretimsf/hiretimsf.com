@@ -1,25 +1,9 @@
-import dynamic from "next/dynamic";
-import { NavigationMenu } from "@/components/ui/navigation-menu";
-import React, { type FC } from "react";
+import MenuButton from "@/components/header/mobile/MenuButton";
 import LogoButton from "@/components/header/shared/LogoButton";
-
-const MenuButton = dynamic(() => import("./MenuButton"), {
-  ssr: false,
-});
-
-const ThemeToggle = dynamic(
-  () => import("@/components/header/shared/ThemeToggle"),
-  {
-    ssr: false,
-  },
-);
-
-const SearchButton = dynamic(
-  () => import("@/components/header/shared/SearchButton"),
-  {
-    ssr: false,
-  },
-);
+import SearchButton from "@/components/header/shared/SearchButton";
+import ThemeToggle from "@/components/header/shared/ThemeToggle";
+import { NavigationMenu } from "@/components/ui/navigation-menu";
+import type { FC } from "react";
 
 interface Props {
   currentPath: string;

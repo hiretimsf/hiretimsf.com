@@ -5,13 +5,13 @@ export const FAQ_ITEMS: FaqItemType[] = [
     id: "faq-1",
     question: "Why should you hire me?",
     answer:
-      "Because I love what I do. I enjoy building Android apps and running. They are my biggest passions, and I put real energy and care into both.",
+      "Because I love what I do. I enjoy building web and mobile apps. They are my biggest passions, and I put real energy and care into both.",
   },
   {
     id: "faq-2",
-    question: "How much Frontend and Backend experience do you have?",
+    question: "How much experience do you have?",
     answer:
-      "I have around four years of hands-on frontend development experience with React, Next.js, TailwindCSS, JavaScript, and TypeScript. On the backend, I have about two years of experience working with Node.js, Supabase, REST APIs, and database integration.",
+      "I have about four years of frontend development experience working with React, Next.js, TailwindCSS, JavaScript, and TypeScript.",
   },
   {
     id: "faq-3",

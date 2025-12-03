@@ -12,7 +12,7 @@ type FooterLinkProps = {
 };
 
 export const FOOTER_LINK_DEFAULT_STYLE =
-  "text-foreground hover:text-foreground/80 transition-colors duration-200";
+  "text-foreground/80 hover:text-muted-foreground transition-colors duration-200 text-sm font-normal";
 
 export default function FooterLink({
   href,
@@ -25,7 +25,7 @@ export default function FooterLink({
     <Button variant="link" asChild className="group">
       <Link
         href={href}
-        className="group flex items-center gap-2"
+        className="group flex items-center gap-1 text-sm font-medium"
         aria-label={ariaLabel || label}
         prefetch={true}
         target={target}

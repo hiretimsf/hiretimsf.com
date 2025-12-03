@@ -26,6 +26,7 @@ import {
   createContext,
   Fragment,
   type HTMLAttributes,
+  startTransition,
   use,
   useEffect,
   useMemo,
@@ -58,20 +59,20 @@ export function TocPopoverTrigger({
     <CollapsibleTrigger
       {...props}
       className={cn(
-        "text-panda-text flex flex-row items-center gap-2.5 px-4 py-2.5 text-start text-sm focus-visible:outline-none md:px-6 [&_svg]:size-4 [&_svg]:shrink-0",
+        "text-foreground flex flex-row items-center gap-2.5 px-4 py-2.5 text-start text-sm focus-visible:outline-none md:px-6 [&_svg]:size-4 [&_svg]:shrink-0",
         props.className,
       )}
     >
       <ProgressCircle
         value={(selected + 1) / items.length}
         max={1}
-        className="text-panda-orange"
+        className="text-foreground"
       />
       <span className="grid flex-1 *:col-start-1 *:row-start-1 *:my-auto">
         <span
           className={cn(
             "truncate transition-all",
-            open && "text-panda-text",
+            open && "text-foreground",
             showItem && "pointer-events-none -translate-y-full opacity-0",
           )}
         >
@@ -93,8 +94,10 @@ export function TocPopoverTrigger({
   );
 }
 
-interface ProgressCircleProps
-  extends Omit<React.ComponentProps<"svg">, "strokeWidth"> {
+interface ProgressCircleProps extends Omit<
+  React.ComponentProps<"svg">,
+  "strokeWidth"
+> {
   value: number;
   strokeWidth?: number;
   size?: number;
@@ -190,7 +193,7 @@ export function TocPopover(props: HTMLAttributes<HTMLDivElement>) {
       className={cn("sticky z-10 overflow-visible", tocNav, props.className)}
       style={{
         ...props.style,
-        top: "6.5rem",
+        top: "4.5rem",
       }}
     >
       <TocPopoverContext.Provider
@@ -261,8 +264,10 @@ export function LastUpdate(props: { date: Date }) {
   const [date, setDate] = useState("");
 
   useEffect(() => {
-    // to the timezone of client
-    setDate(props.date.toLocaleDateString());
+    // Format date to client's timezone using startTransition to avoid synchronous setState warning
+    startTransition(() => {
+      setDate(props.date.toLocaleDateString());
+    });
   }, [props.date]);
 
   return (

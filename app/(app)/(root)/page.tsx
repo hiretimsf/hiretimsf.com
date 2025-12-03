@@ -2,14 +2,11 @@ import SeparatorHorizontal from "@/components/SeparatorHorizontal";
 import Hero from "@/features/home/Hero";
 import HeadingTitle from "@/components/HeadingTitle";
 import ContactMe from "@/features/home/ContactMe";
-import { getFeaturedApps } from "@/lib/get-featured-apps";
 import FeaturedApps from "@/features/home/FeaturedApps";
 import Testimonials from "@/features/home/Testimonials";
 import { FaqSection } from "@/features/home/FAQ";
 
 export default function Home() {
-  // Get featured apps filtered by weight (heavier weights appear first)
-  const memoizedProjects = getFeaturedApps();
   return (
     <>
       <SeparatorHorizontal borderTop={false} />
@@ -24,7 +21,7 @@ export default function Home() {
         textStyleClassName="text-2xl font-bold sm:text-3xl"
       />
       <SeparatorHorizontal />
-      <FeaturedApps projects={memoizedProjects} />
+      <FeaturedApps />
       <SeparatorHorizontal />
       <HeadingTitle
         title="WHAT PEOPLE ARE SAYING"
