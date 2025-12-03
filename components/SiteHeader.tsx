@@ -1,25 +1,12 @@
 "use client";
 
+import DesktopHeader from "@/components/header/desktop/DesktopHeader";
+import MobileHeader from "@/components/header/mobile/MobileHeader";
 import ProgressBar from "@/components/header/shared/ProgressBar";
 import { cn } from "@/lib/utils";
 import { useMotionValueEvent, useScroll } from "motion/react";
-import dynamic from "next/dynamic";
 import { usePathname } from "next/navigation";
 import { useState, type FC } from "react";
-
-const MobileHeader = dynamic(
-  () => import("@/components/header/mobile/MobileHeader"),
-  {
-    ssr: false,
-  },
-);
-
-const DesktopHeader = dynamic(
-  () => import("@/components/header/desktop/DesktopHeader"),
-  {
-    ssr: false,
-  },
-);
 
 interface Props {
   showProgressBar?: boolean;

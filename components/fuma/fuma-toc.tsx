@@ -52,7 +52,7 @@ export function Toc(props: HTMLAttributes<HTMLDivElement>) {
         toc,
         props.className,
       )}
-      animate={{ paddingTop: isScrolled ? "6.5rem" : "1.5rem" }}
+      animate={{ paddingTop: isScrolled ? "4.5rem" : "1.5rem" }}
       transition={{ duration: 0.2 }}
       style={
         {
@@ -113,7 +113,7 @@ export function TOCItems({
     <>
       <TocThumb
         containerRef={containerRef}
-        className="bg-panda-orange absolute top-(--fd-top) h-(--fd-height) w-px transition-all"
+        className="bg-foreground absolute top-(--fd-top) h-(--fd-height) w-px transition-all"
       />
       <div
         ref={containerRef}
@@ -138,7 +138,7 @@ function TOCItem({
     <Primitive.TOCItem
       href={item.url}
       className={cn(
-        "text-panda-text/60 data-[active=true]:text-panda-text py-1.5 text-sm [overflow-wrap:anywhere] transition-colors first:pt-0 last:pb-0",
+        "text-foreground/60 text-left data-[active=true]:text-foreground py-1.5 text-sm [overflow-wrap:anywhere] transition-colors first:pt-0 last:pb-0",
         prose && "prose",
         item.depth <= 2 && "ps-3",
         item.depth === 3 && "ps-6",

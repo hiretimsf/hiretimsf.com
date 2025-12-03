@@ -1,7 +1,9 @@
 "use client";
 
-import dynamic from "next/dynamic";
-
+import GithubButton from "@/components/header/shared/GithubButton";
+import LogoButton from "@/components/header/shared/LogoButton";
+import { SearchButton } from "@/components/header/shared/SearchButton";
+import ThemeToggle from "@/components/header/shared/ThemeToggle";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -14,32 +16,9 @@ import {
 import { Skeleton } from "@/components/ui/skeleton";
 import NAVIGATION_LINKS from "@/config/navigationLinks";
 import { cn } from "@/lib/utils";
-import Link from "next/link";
 import type { FC } from "react";
 import React, { memo, Suspense, useCallback } from "react";
 import NavigationAbout from "./navigations/about/NavigationAbout";
-import { SearchButton } from "@/components/header/shared/SearchButton";
-
-const LogoButton = dynamic(
-  () => import("@/components/header/shared/LogoButton"),
-  {
-    ssr: false,
-  },
-);
-
-const ThemeToggle = dynamic(
-  () => import("@/components/header/shared/ThemeToggle"),
-  {
-    ssr: false,
-  },
-);
-
-const GithubButton = dynamic(
-  () => import("@/components/header/shared/GithubButton"),
-  {
-    ssr: false,
-  },
-);
 interface Props {
   activePath: string;
 }
@@ -91,13 +70,7 @@ const DesktopHeader: FC<Props> = memo(({ activePath }) => {
               aria-current={isActive(link.href) ? "page" : undefined}
               className={getNavItemClassName(link.href)}
             >
-              <Link
-                href={link.href}
-                className="flex items-center gap-1"
-                prefetch
-              >
-                {link.label}
-              </Link>
+              {link.label}
             </NavigationMenuTrigger>
             <NavigationMenuContent>
               <Suspense fallback={<NavigationContentFallback />}>

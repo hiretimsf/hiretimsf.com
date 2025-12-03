@@ -34,7 +34,7 @@ export function DocsLayout({
         id="nd-docs-layout"
         {...props.containerProps}
         className={cn(
-          "bg-panda-background mx-auto flex w-full max-w-7xl flex-1 flex-row",
+          "bg-background mx-auto flex w-full max-w-7xl flex-1 flex-row text-foreground text-left",
           variables,
           props.containerProps?.className,
         )}
