@@ -112,7 +112,7 @@
 @utility step {
   counter-increment: step;
   &::before {
-    @apply absolute -ml-11 inline-flex size-7 items-center justify-center rounded-full border border-muted-foreground/15 bg-muted text-center -indent-px text-sm font-medium text-muted-foreground ring-1 ring-edge ring-offset-1 ring-offset-background md:-mt-0.5 md:-ml-11.5 md:size-8;
+    @apply absolute inline-flex size-8 items-center justify-center rounded-full border bg-background shadow-sm text-center text-sm font-medium text-foreground -ml-11.5 md:size-8;
     content: counter(step);
   }
 }
@@ -459,19 +459,6 @@
 
   [data-highlighted-line] {
     @apply bg-code-highlight;
-  }
-
-  .prose {
-    h2 {
-      margin-block-start: 1em !important;
-      margin-block-end: 1em !important;
-    }
-    img {
-      margin-block-start: 1em !important;
-      margin-block-end: 1em !important;
-      margin-top: 0.5em !important;
-      margin-bottom: 0em !important;
-    }
   }
 }
 

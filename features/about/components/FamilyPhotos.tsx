@@ -14,7 +14,7 @@ import * as React from "react";
 
 export default function FamilyPhotos() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-2xl mx-auto w-full">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-2xl mx-auto w-full mb-4">
       {FAMILY_PHOTOS.map((photo, index) => (
         <Dialog key={index}>
           <DialogTrigger asChild>

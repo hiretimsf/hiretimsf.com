@@ -1,4 +1,4 @@
-import Link from "fumadocs-core/link";
+import Link from "next/link";
 import type {
   AnchorHTMLAttributes,
   FC,
@@ -24,6 +24,25 @@ import {
   CodeBlockTabsTrigger,
   Pre,
 } from "./codeblock";
+
+function CustomLink(props: AnchorHTMLAttributes<HTMLAnchorElement>) {
+  const href = props.href || "#";
+  const isExternal = href.startsWith("http");
+  return (
+    <Link
+      href={href}
+      target="_blank"
+      rel={isExternal ? "noopener noreferrer" : undefined}
+      className={cn(
+        "font-medium underline underline-offset-4 decoration-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors",
+        props.className,
+      )}
+      {...props}
+    >
+      {props.children}
+    </Link>
+  );
+}
 
 function Image(
   props: ImgHTMLAttributes<HTMLImageElement> & {
@@ -60,12 +79,13 @@ const defaultMdxComponents = {
   ),
   Card,
   Cards,
-  a: Link as FC<AnchorHTMLAttributes<HTMLAnchorElement>>,
+  a: CustomLink,
+  Link: CustomLink,
   img: Image,
   p: (props: HTMLAttributes<HTMLParagraphElement>) => (
     <p
       className={cn(
-        "leading-7! text-pretty text-foreground/80 dark:text-foreground/60 text-base font-normal",
+        "leading-7.5! text-pretty text-foreground/80 dark:text-foreground/60 text-base font-normal my-4",
         props.className,
       )}
       {...props}

@@ -82,7 +82,7 @@ export default async function AboutMePage() {
           gridId="grid-about"
         />
         <SeparatorHorizontal short={true} />
-        <div className="border-border relative min-h-52 max-w-full">
+        <div className="border-border relative min-h-52 max-w-full pt-6">
           <DocsLayout
             tree={aboutSource.pageTree}
             containerProps={{ className: "relative bg-transparent" }}
