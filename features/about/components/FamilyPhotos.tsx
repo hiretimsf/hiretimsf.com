@@ -7,7 +7,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { cn } from "@/lib/utils";
-import personalPhotos from "@/features/about/data/personal-photos";
+import { FAMILY_PHOTOS } from "../data/family-photos";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import Image from "next/image";
 import * as React from "react";
@@ -15,7 +15,7 @@ import * as React from "react";
 export default function FamilyPhotos() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-2xl mx-auto w-full">
-      {personalPhotos.map((photo, index) => (
+      {FAMILY_PHOTOS.map((photo, index) => (
         <Dialog key={index}>
           <DialogTrigger asChild>
             <div

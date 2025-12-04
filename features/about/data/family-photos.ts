@@ -1,8 +1,9 @@
 import photo1 from "../assets/about_me_01.jpg";
 import photo2 from "../assets/about_me_02.jpg";
 import photo3 from "../assets/about_me_03.jpg";
+import type { PhotoType } from "../types/PhotoType";
 
-const personalPhotos = [
+export const FAMILY_PHOTOS: PhotoType[] = [
   {
     src: photo1,
     alt: "Tim's wedding photo showing a special moment with his wife",
@@ -16,5 +17,3 @@ const personalPhotos = [
     alt: "Tim running, showing his active lifestyle and fitness",
   },
 ];
-
-export default personalPhotos;

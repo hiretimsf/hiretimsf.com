@@ -1,6 +1,6 @@
 "use client";
 
-import { MusicIcon } from "lucide-react";
+import { CircleUserIcon } from "lucide-react";
 import Link from "next/link";
 import { memo } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -16,7 +16,7 @@ const LogoButton = memo(({ className }: { className?: string }) => (
     <Avatar className="size-6">
       <AvatarImage alt="HireTim logo" src="/images/logo.png" />
       <AvatarFallback>
-        <MusicIcon className="size-6" />
+        <CircleUserIcon className="size-6" />
       </AvatarFallback>
     </Avatar>
     <span className="text-foreground group-hover:text-foreground/80 text-xl font-semibold group-hover:underline group-hover:underline-offset-6 md:text-lg">

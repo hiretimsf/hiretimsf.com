@@ -88,7 +88,7 @@ export default async function AboutMePage() {
             containerProps={{ className: "relative bg-transparent" }}
           >
             <DocsPage toc={pageData.toc}>
-              <DocsBody>
+              <DocsBody prose={false}>
                 <MDX code={MDX} components={getMDXComponents()} />
               </DocsBody>
             </DocsPage>

@@ -13,11 +13,10 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import { Skeleton } from "@/components/ui/skeleton";
 import NAVIGATION_LINKS from "@/config/navigationLinks";
 import { cn } from "@/lib/utils";
 import type { FC } from "react";
-import React, { memo, Suspense, useCallback } from "react";
+import React, { memo, useCallback } from "react";
 import NavigationAbout from "./navigations/about/NavigationAbout";
 interface Props {
   activePath: string;
@@ -28,12 +27,6 @@ const navItemStyles = {
   base: "text-md font-semibold transition-colors duration-200",
   active: "bg-accent text-md font-semibold",
 };
-
-const NavigationContentFallback = () => (
-  <div className="w-[540px] p-4">
-    <Skeleton className="h-24 w-full" />
-  </div>
-);
 
 const navigationComponents: Record<string, React.ComponentType> = {
   About: NavigationAbout,
@@ -73,12 +66,10 @@ const DesktopHeader: FC<Props> = memo(({ activePath }) => {
               {link.label}
             </NavigationMenuTrigger>
             <NavigationMenuContent>
-              <Suspense fallback={<NavigationContentFallback />}>
-                {(() => {
-                  const NavContent = navigationComponents[link.label];
-                  return NavContent ? <NavContent /> : null;
-                })()}
-              </Suspense>
+              {(() => {
+                const NavContent = navigationComponents[link.label];
+                return NavContent ? <NavContent /> : null;
+              })()}
             </NavigationMenuContent>
           </NavigationMenuItem>
         );
