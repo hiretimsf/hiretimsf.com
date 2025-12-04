@@ -22,7 +22,7 @@ export default memo(function ShoutoutItem({ item, index }: ShoutoutItemProps) {
   if (hasError) {
     return (
       <div className="rounded-xl bg-gray-100 p-4 text-center">
-        <p className="text-panda-text">Content unavailable</p>
+        <p className="text-foreground">Content unavailable</p>
       </div>
     );
   }

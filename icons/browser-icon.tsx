@@ -15,7 +15,7 @@ function BrowserIcon({
     <svg
       viewBox="0 0 48 48"
       xmlns="http://www.w3.org/2000/svg"
-      className={cn("text-panda-text size-4", className)}
+      className={cn("text-foreground size-4", className)}
       {...props}
     >
       <title>{title}</title>
