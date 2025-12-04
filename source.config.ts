@@ -33,10 +33,10 @@ export const projects = defineDocs({
 });
 
 export const experience = defineDocs({
-  dir: "content/experience",
+  dir: "features/experience/content",
   docs: defineCollections({
     type: "doc",
-    dir: "content/experience",
+    dir: "features/experience/content",
     schema: frontmatterSchema.extend({
       title: z.string().optional(),
       companyName: z.string(),

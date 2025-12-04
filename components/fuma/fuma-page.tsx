@@ -216,7 +216,7 @@ export function DocsPage({
         { enabled: tocEnabled, component: tocReplace },
         <Toc>
           {tocOptions.header}
-          <h3 className="text-panda-text inline-flex items-center gap-1.5 text-sm">
+          <h3 className="text-foreground inline-flex items-center gap-1.5 text-sm">
             <Text className="size-4" />
             <I18nLabel label="toc" />
           </h3>

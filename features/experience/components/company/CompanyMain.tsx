@@ -1,10 +1,10 @@
 import DotsBackground from "@/components/BackgroundDots";
 import { Separator } from "@/components/ui/separator";
 import type { ExperienceItemType } from "@/types";
-import CompanyLocation from "./company-location";
-import CompanyLogo from "./company-logo";
-import CompanyName from "./company-name";
-import CompanyWebsite from "./company-website";
+import CompanyLocation from "./CompanyLocation";
+import CompanyLogo from "./CompanyLogo";
+import CompanyName from "./CompanyName";
+import CompanyWebsite from "./CompanyWebsite";
 
 type CompanyMainProps = Pick<
   ExperienceItemType,

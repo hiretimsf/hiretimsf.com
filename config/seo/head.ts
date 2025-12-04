@@ -23,6 +23,26 @@ const HEAD: HeadType[] = [
     slug: "/about",
   },
   {
+    page: "Experience",
+    title: truncateTitle(
+      "WorkExperience | Design Engineer & Frontend Developer | 5+ Years Exp",
+    ),
+    description: truncateDescription(
+      "Work experience of Tim, a Design Engineer and Frontend Developer based in San Francisco Bay Area.",
+    ),
+    slug: "/experience",
+  },
+  {
+    page: "Education",
+    title: truncateTitle(
+      "Education of Tim | Design Engineer & Frontend Developer | 5+ Years Exp",
+    ),
+    description: truncateDescription(
+      "Education of Tim, a Design Engineer and Frontend Developer.",
+    ),
+    slug: "/education",
+  },
+  {
     page: "Blog",
     title: truncateTitle("Blog | Frontend Development Insights | Tim"),
     description: truncateDescription(

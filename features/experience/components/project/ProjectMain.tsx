@@ -1,0 +1,47 @@
+import { cn } from "@/lib/utils";
+import type { ProjectItemType } from "@/types";
+import { ProjectDate } from "./ProjectDate";
+import { ProjectDescription } from "./ProjectDescription";
+import { ProjectImage } from "./ProjectImage";
+import ProjectSkills from "./ProjectSkills";
+import { ProjectTitle } from "./ProjectTitle";
+
+type ProjectMainProps = {
+  project: ProjectItemType;
+  hasBorderTop?: boolean;
+  isLast?: boolean;
+};
+
+export function ProjectMain({
+  project,
+  hasBorderTop = false,
+  isLast = false,
+}: ProjectMainProps) {
+  return (
+    <div className="px-6 md:flex-row md:px-8">
+      <div
+        className={cn(
+          "flex w-full flex-row gap-4 border-x border-gray-200 px-4 md:gap-4",
+          !isLast && "border-b",
+          hasBorderTop && "border-t",
+        )}
+      >
+        <div className="flex-shrink-0 border-r border-gray-200 py-4 pr-4">
+          <ProjectImage
+            imageUrl={project.imageUrl}
+            imageAlt={project.imageAlt}
+          />
+        </div>
+        <div className="flex flex-col gap-1 border-gray-200 py-4">
+          <ProjectTitle
+            title={project.title}
+            demoLink={project.liveDemo ?? project.github ?? ""}
+          />
+          <ProjectDate date={project.date ?? "Unknown date"} />
+          <ProjectDescription description={project.description} />
+        </div>
+      </div>
+      <ProjectSkills skills={project.skills ?? []} />
+    </div>
+  );
+}

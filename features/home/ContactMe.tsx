@@ -28,11 +28,11 @@ const ContactMe = ({
       <div className="w-full flex-auto px-6 text-center sm:text-left">
         <h2
           id="contact-heading"
-          className="text-panda-text z-10 text-center text-4xl font-semibold tracking-tight text-pretty sm:text-left sm:text-5xl"
+          className="text-foreground z-10 text-center text-4xl font-semibold tracking-tight text-pretty sm:text-left sm:text-5xl"
         >
           {heading}
         </h2>
-        <p className="text-panda-text mt-6 text-center text-lg/8 text-pretty sm:text-left sm:text-lg">
+        <p className="text-foreground mt-6 text-center text-lg/8 text-pretty sm:text-left sm:text-lg">
           {description}
         </p>
         <div className="mt-6">
