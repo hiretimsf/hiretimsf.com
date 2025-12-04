@@ -8,7 +8,7 @@ type EmbedVideosProps = {
 
 export default function EmbedVideos({ videos }: EmbedVideosProps) {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl mx-auto w-full">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl mx-auto w-full mb-4">
       {videos.map((video) => (
         <EmbedVideoItem key={video.embedUrl} {...video} />
       ))}

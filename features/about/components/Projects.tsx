@@ -61,7 +61,7 @@ export default function Projects({ data }: { data: WebProjectType[] }) {
             <CarouselItem key={index} className="basis-full md:basis-1/2">
               <div className="h-full p-1">
                 <Card
-                  className="h-full gap-0 rounded-md border-x border-b border-border-edge py-0 shadow-lg transition-all duration-300"
+                  className="h-full gap-0 rounded-md border-x border-b border-border-edge py-0 transition-all duration-300"
                   role="article"
                   aria-labelledby={`project-title-${index}`}
                 >
@@ -98,7 +98,7 @@ export default function Projects({ data }: { data: WebProjectType[] }) {
                           </CardDescription>
                         )}
                       </CardContent>
-                      <CardFooter className="flex w-full flex-col items-stretch p-0">
+                      <CardFooter className="flex w-full flex-col items-stretch py-2 px-2">
                         <Button asChild className="w-full" variant="outline">
                           <Link
                             href={item.liveDemo ?? ""}

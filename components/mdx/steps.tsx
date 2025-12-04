@@ -9,12 +9,7 @@ export function Steps({
   className?: string;
 }) {
   return (
-    <div
-      className={cn(
-        "ml-4 mb-8 border-l border-muted pl-7.5 [counter-reset:step] md:mb-12",
-        className,
-      )}
-    >
+    <div className={cn("ml-4 mb-8 [counter-reset:step] md:mb-12", className)}>
       {children}
     </div>
   );
@@ -28,7 +23,12 @@ export function Step({
   className?: string;
 }) {
   return (
-    <div className={cn("step relative pb-4 last:pb-0", className)}>
+    <div
+      className={cn(
+        "step border-l border-muted pl-7.5 relative pb-4 last:border-transparent last:pb-0",
+        className,
+      )}
+    >
       {children}
     </div>
   );

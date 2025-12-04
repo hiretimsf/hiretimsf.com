@@ -35,7 +35,7 @@ export function Heading<T extends Types = "h1">({
         data-card=""
         href={`#${props.id}`}
         className={cn(
-          "text-foreground no-underline hover:underline hover:text-primary transition-colors duration-200 hover:underline-offset-4 font-semibold -mt-0.5! -mb-2!",
+          "text-foreground no-underline hover:underline hover:text-primary transition-colors duration-200 hover:underline-offset-4 font-semibold -mt-0.5!",
           size,
         )}
       >
