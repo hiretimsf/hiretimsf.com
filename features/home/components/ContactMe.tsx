@@ -32,7 +32,7 @@ const ContactMe = ({
         >
           {heading}
         </h2>
-        <p className="text-foreground mt-6 text-center text-lg/8 text-pretty sm:text-left sm:text-lg">
+        <p className="text-foreground/80 mt-6 text-center text-lg/8 text-pretty sm:text-left sm:text-lg">
           {description}
         </p>
         <div className="mt-6">
