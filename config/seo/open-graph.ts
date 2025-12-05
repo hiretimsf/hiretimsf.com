@@ -1,4 +1,4 @@
-const OPENGRAPH_IMAGE = "/images/opengraph-image.jpg";
+const OPENGRAPH_IMAGE = "/images/open-graph-image.jpg";
 const TWITTER_IMAGE = "/images/twitter-image.jpg";
 
 const OPEN_GRAPH = {
