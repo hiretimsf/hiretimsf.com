@@ -7,10 +7,12 @@ const ProgressBar = () => {
   const completion = useReadingProgress();
   return (
     <motion.span
-      className="bg-accent absolute bottom-0 left-0 h-0.5 w-full origin-left"
-      animate={{ scaleX: completion / 100 }}
-      initial={{ scaleX: 0 }}
-      transition={{ duration: 0.15, ease: "linear" }}
+      className="bg-muted-foreground absolute bottom-0 left-0 h-px w-full origin-left"
+      animate={{
+        scaleX: completion / 100,
+        transition: { duration: 0.15, ease: "linear" },
+      }}
+      initial={{ scaleX: 0, transition: { duration: 0.15, ease: "linear" } }}
     />
   );
 };

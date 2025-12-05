@@ -6,15 +6,15 @@ import type { ListItemType } from "@/features/home/types/ListItem";
 import Link from "next/link";
 import { IoCheckmarkCircle as CheckmarkIcon } from "react-icons/io5";
 import { Shine } from "@/components/animate-ui/primitives/effects/shine";
-import {
-  Effect,
-} from "@/components/animate-ui/primitives/effects/effect";
+import { Effect } from "@/components/animate-ui/primitives/effects/effect";
+import { Blur } from "@/components/animate-ui/primitives/effects/blur";
 
 function HeroContent() {
   return (
     <div className="mx-auto grid w-full max-w-2xl grid-cols-1 divide-y divide-dashed divide-border-edge">
       <Effect
         inView={true}
+        inViewOnce={true}
         fade={true}
         slide={{ direction: "up", offset: 10 }}
         delay={100}
@@ -25,6 +25,7 @@ function HeroContent() {
       </Effect>
       <Effect
         inView={true}
+        inViewOnce={true}
         fade={true}
         slide={{ direction: "up", offset: 10 }}
         delay={200}
@@ -37,6 +38,7 @@ function HeroContent() {
 
       <Effect
         inView={true}
+        inViewOnce={true}
         fade={true}
         slide={{ direction: "up", offset: 10 }}
         delay={300}
@@ -59,6 +61,7 @@ function HeroContent() {
             <Effect
               key={itemId}
               inView={true}
+              inViewOnce={true}
               fade={true}
               slide={{ direction: "up", offset: 10 }}
               delay={400 + index * 50}
@@ -69,7 +72,7 @@ function HeroContent() {
                   aria-hidden="true"
                   className={cn(
                     "absolute left-4 size-5 text-muted-foreground/80",
-                    "top-1/2 -translate-y-1/2"
+                    "top-1/2 -translate-y-1/2",
                   )}
                 />
                 <div className="flex flex-row gap-x-1">
@@ -88,6 +91,7 @@ function HeroContent() {
 
       <Effect
         inView={true}
+        inViewOnce={true}
         fade={true}
         slide={{ direction: "up", offset: 10 }}
         delay={600}
@@ -120,17 +124,19 @@ export default function Hero({
       {/* Desktop Layout */}
       <div className="hidden lg:block max-w-5xl mx-auto p-8">
         <div className="grid grid-cols-2 gap-x-6 border border-dashed border-border-edge">
-          <div className="col-span-1">
-            <Image
-              alt={imageAlt}
-              src={imageSrcDesktop}
-              width={1000}
-              height={1000}
-              className="h-full w-full object-cover"
-              priority
-              unoptimized
-            />
-          </div>
+          <Blur inViewOnce={true} delay={0.5}>
+            <div className="col-span-1">
+              <Image
+                alt={imageAlt}
+                src={imageSrcDesktop}
+                width={1000}
+                height={1000}
+                className="h-full w-full object-cover"
+                priority
+                unoptimized
+              />
+            </div>
+          </Blur>
           <div className="col-span-1 flex items-center border-l border-dashed border-border-edge">
             <HeroContent />
           </div>
