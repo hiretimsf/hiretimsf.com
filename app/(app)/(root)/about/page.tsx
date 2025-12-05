@@ -3,7 +3,7 @@ import { DocsBody, DocsPage } from "@/components/fuma/fuma-page";
 import Heading from "@/components/HeadingTitle";
 import SeparatorHorizontal from "@/components/SeparatorHorizontal";
 import HEAD from "@/config/seo/head";
-import ContactMe from "@/features/home/components/ContactMe";
+import ContactMe from "@/components/ContactMe";
 import { getBaseUrl } from "@/lib/helpers";
 import { aboutSource } from "@/lib/source";
 import { getMDXComponents } from "@/mdx-components";
@@ -64,6 +64,7 @@ export default async function AboutMePage() {
 
   return (
     <>
+      <SeparatorHorizontal />
       <main className="mx-auto flex flex-col">
         <div className="relative">
           <Image

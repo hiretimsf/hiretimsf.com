@@ -1,7 +1,7 @@
 import SeparatorHorizontal from "@/components/SeparatorHorizontal";
 import Hero from "@/features/home/components/Hero";
 import HeadingTitle from "@/components/HeadingTitle";
-import ContactMe from "@/features/home/components/ContactMe";
+import ContactMe from "@/components/ContactMe";
 import FeaturedApps from "@/features/home/components/FeaturedApps";
 import Testimonials from "@/features/home/components/Testimonials";
 import { FaqSection } from "@/features/home/components/FAQ";

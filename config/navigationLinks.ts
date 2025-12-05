@@ -4,7 +4,7 @@ import {
   UserIcon as AboutMeIcon,
   RssIcon as BlogIcon,
   GraduationCapIcon as EducationIcon,
-  BriefcaseIcon as ExperienceIcon,
+  FileTextIcon as ExperienceIcon,
   HomeIcon,
   ArchiveIcon as ProjectsIcon,
 } from "lucide-react";
