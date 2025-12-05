@@ -64,10 +64,10 @@ export const experience = defineDocs({
 });
 
 export const education = defineDocs({
-  dir: "content/education",
+  dir: "features/education/content",
   docs: defineCollections({
     type: "doc",
-    dir: "content/education",
+    dir: "features/education/content",
     schema: frontmatterSchema.extend({
       title: z.string().optional(),
       companyName: z.string(),
