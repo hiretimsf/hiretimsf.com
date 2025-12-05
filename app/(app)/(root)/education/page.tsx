@@ -5,7 +5,7 @@ import EducationSection from "@/features/education/components/EducationSection";
 import { getBaseUrl } from "@/lib/helpers";
 import type { HeadType } from "@/types";
 import type { Metadata } from "next";
-import ContactMe from "@/features/home/components/ContactMe";
+import ContactMe from "@/components/ContactMe";
 
 // Validate SEO configuration to ensure all required fields are present
 // This helps catch missing or incomplete SEO setup early

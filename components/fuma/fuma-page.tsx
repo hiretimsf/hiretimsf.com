@@ -274,7 +274,7 @@ export const DocsBody = forwardRef<
     ref={ref}
     {...props}
     className={cn(
-      prose ? "prose" : "mx-auto w-full max-w-7xl pt-6",
+      prose ? "prose" : "mx-auto w-full max-w-7xl",
       props.className,
     )}
   >

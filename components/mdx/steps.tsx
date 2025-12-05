@@ -9,7 +9,12 @@ export function Steps({
   className?: string;
 }) {
   return (
-    <div className={cn("ml-4 mb-8 [counter-reset:step] md:mb-12", className)}>
+    <div
+      className={cn(
+        "ml-4 mb-8 [counter-reset:step] md:mb-12 [&>*:first-child]:mt-6",
+        className,
+      )}
+    >
       {children}
     </div>
   );
