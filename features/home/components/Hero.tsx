@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import type { ListItemType } from "@/features/home/types/ListItem";
 import Link from "next/link";
 import { IoCheckmarkCircle as CheckmarkIcon } from "react-icons/io5";
+import { Shine } from "@/components/animate-ui/primitives/effects/shine";
 
 function HeroContent() {
   return (
@@ -54,9 +55,9 @@ function HeroContent() {
       </ul>
       <div className="px-4 text-left py-4">
         <Button asChild>
-          <Link href="/about" className="w-full sm:w-fit py-4 px-6">
-            Learn More
-          </Link>
+          <Shine className="w-full sm:w-fit py-4 px-6">
+            <Link href="/about">Learn More</Link>
+          </Shine>
         </Button>
       </div>
     </div>

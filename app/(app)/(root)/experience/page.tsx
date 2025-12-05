@@ -5,6 +5,7 @@ import WorkExperienceSection from "@/features/experience/components/ExperienceSe
 import { getBaseUrl } from "@/lib/helpers";
 import type { HeadType } from "@/types";
 import type { Metadata } from "next";
+import ContactMe from "@/features/home/components/ContactMe";
 
 // Validate SEO configuration to ensure all required fields are present
 // This helps catch missing or incomplete SEO setup early
@@ -44,6 +45,8 @@ export default async function ExperiencePage() {
           <WorkExperienceSection className="w-full" />
         </section>
       </main>
+      <SeparatorHorizontal short={true} />
+      <ContactMe />
       <SeparatorHorizontal borderBottom={false} />
     </>
   );

@@ -1,10 +1,10 @@
 import SeparatorHorizontal from "@/components/SeparatorHorizontal";
-import Hero from "@/features/home/Hero";
+import Hero from "@/features/home/components/Hero";
 import HeadingTitle from "@/components/HeadingTitle";
-import ContactMe from "@/features/home/ContactMe";
-import FeaturedApps from "@/features/home/FeaturedApps";
-import Testimonials from "@/features/home/Testimonials";
-import { FaqSection } from "@/features/home/FAQ";
+import ContactMe from "@/features/home/components/ContactMe";
+import FeaturedApps from "@/features/home/components/FeaturedApps";
+import Testimonials from "@/features/home/components/Testimonials";
+import { FaqSection } from "@/features/home/components/FAQ";
 
 export default function Home() {
   return (

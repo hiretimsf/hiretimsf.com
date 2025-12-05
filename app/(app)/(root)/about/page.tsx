@@ -3,6 +3,7 @@ import { DocsBody, DocsPage } from "@/components/fuma/fuma-page";
 import Heading from "@/components/HeadingTitle";
 import SeparatorHorizontal from "@/components/SeparatorHorizontal";
 import HEAD from "@/config/seo/head";
+import ContactMe from "@/features/home/components/ContactMe";
 import { getBaseUrl } from "@/lib/helpers";
 import { aboutSource } from "@/lib/source";
 import { getMDXComponents } from "@/mdx-components";
@@ -82,7 +83,7 @@ export default async function AboutMePage() {
           gridId="grid-about"
         />
         <SeparatorHorizontal short={true} />
-        <div className="border-border relative min-h-52 max-w-full pt-6">
+        <div className="border-border relative min-h-52 max-w-full">
           <DocsLayout
             tree={aboutSource.pageTree}
             containerProps={{ className: "relative bg-transparent" }}
@@ -95,6 +96,8 @@ export default async function AboutMePage() {
           </DocsLayout>
         </div>
       </main>
+      <SeparatorHorizontal short={true} />
+      <ContactMe />
       <SeparatorHorizontal borderBottom={false} />
     </>
   );

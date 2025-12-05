@@ -15,6 +15,7 @@ import {
   useRef,
   useState,
 } from "react";
+import Banner from "@/components/Banner";
 
 export interface TOCProps {
   /**
@@ -48,7 +49,7 @@ export function Toc(props: HTMLAttributes<HTMLDivElement>) {
       id="nd-toc"
       {...(props as ComponentProps<typeof motion.div>)}
       className={cn(
-        "sticky top-[calc(var(--fd-banner-height)+var(--fd-nav-height))] h-(--fd-toc-height) pb-2",
+        "sticky top-[calc(var(--fd-banner-height)+var(--fd-nav-height))] h-(--fd-toc-height) pb-2 pl-4 border-l border-border-edge border-dashed bg-accent/20 dark:bg-accent/10",
         toc,
         props.className,
       )}
@@ -64,6 +65,7 @@ export function Toc(props: HTMLAttributes<HTMLDivElement>) {
     >
       <div className="flex h-full w-(--fd-toc-width) max-w-full flex-col pe-4">
         {props.children}
+        <Banner />
       </div>
     </motion.div>
   );
@@ -73,7 +75,7 @@ export function TocItemsEmpty() {
   const { text } = useI18n();
 
   return (
-    <div className="bg-fd-card text-foreground rounded-lg border border-gray-200 p-3 text-xs">
+    <div className="bg-fd-card text-foreground rounded-lg border border-border-edge p-3 text-xs">
       {text.tocNoHeadings}
     </div>
   );
@@ -87,7 +89,7 @@ export function TOCScrollArea(props: ComponentProps<"div">) {
       {...props}
       ref={viewRef}
       className={cn(
-        "relative ms-px min-h-0 overflow-auto [mask-image:linear-gradient(to_bottom,transparent,white_16px,white_calc(100%-16px),transparent)] py-3 text-sm [scrollbar-width:none]",
+        "relative ms-px min-h-0 overflow-auto mask-[linear-gradient(to_bottom,transparent,white_16px,white_calc(100%-16px),transparent)] py-3 text-sm [scrollbar-width:none]",
         props.className,
       )}
     >
