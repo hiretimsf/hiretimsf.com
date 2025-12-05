@@ -13,7 +13,8 @@ import { useRouter } from "next/navigation";
 import React, { useCallback, useEffect, useState } from "react";
 import { useHotkeys } from "react-hotkeys-hook";
 
-import { SearchIcon } from "lucide-react";
+import { AnimateIcon } from "@/components/animate-ui/icons/icon";
+import { SearchIcon as AnimateSearchIcon } from "@/components/animate-ui/icons/search";
 import { Button } from "@/components/ui/button";
 import {
   CommandDialog,
@@ -175,7 +176,9 @@ export function SearchButton() {
         }}
         className="corner-squircle rounded-xl text-foreground "
       >
-        <SearchIcon aria-hidden className="size-5 shrink-0 text-foreground" />
+        <AnimateIcon animateOnHover className="size-5 shrink-0 text-foreground">
+          <AnimateSearchIcon className="size-5" />
+        </AnimateIcon>
       </Button>
 
       {/* Command Menu Dialog */}

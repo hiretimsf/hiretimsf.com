@@ -18,6 +18,7 @@ import { cn } from "@/lib/utils";
 import type { FC } from "react";
 import React, { memo, useCallback } from "react";
 import NavigationAbout from "./navigations/about/NavigationAbout";
+import { useSound } from "@/hooks/use-sound";
 interface Props {
   activePath: string;
 }
@@ -33,10 +34,17 @@ const navigationComponents: Record<string, React.ComponentType> = {
 };
 
 const DesktopHeader: FC<Props> = memo(({ activePath }) => {
+  const playClick = useSound("/audio/click.wav");
   const isActive = useCallback(
     (path: string) => {
       if (path === "/") return activePath === "/";
       if (path === "/blog") return activePath.startsWith("/blog");
+      if (path === "/about") {
+        return ["/about", "/experience", "/education"].some((p) =>
+          activePath.startsWith(p),
+        );
+      }
+
       return activePath === path;
     },
     [activePath],
@@ -60,6 +68,7 @@ const DesktopHeader: FC<Props> = memo(({ activePath }) => {
         return (
           <NavigationMenuItem key={link.href}>
             <NavigationMenuTrigger
+              onClick={() => playClick()}
               aria-current={isActive(link.href) ? "page" : undefined}
               className={getNavItemClassName(link.href)}
             >
@@ -79,6 +88,7 @@ const DesktopHeader: FC<Props> = memo(({ activePath }) => {
         <NavigationMenuItem key={link.href}>
           <NavigationMenuLink
             href={link.href}
+            onClick={() => playClick()}
             aria-current={isActive(link.href) ? "page" : undefined}
             className={getNavItemClassName(link.href)}
           >
@@ -87,7 +97,7 @@ const DesktopHeader: FC<Props> = memo(({ activePath }) => {
         </NavigationMenuItem>
       );
     },
-    [isActive, getNavItemClassName],
+    [isActive, getNavItemClassName, playClick],
   );
 
   return (
