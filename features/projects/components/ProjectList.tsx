@@ -1,10 +1,11 @@
+import { Effect } from "@/components/animate-ui/primitives/effects/effect";
 import BackgroundDots from "@/components/BackgroundDots";
 import ProjectItem from "@/features/projects/components/ProjectItem";
-import { getFeaturedApps } from "@/lib/source";
-import { Effect } from "@/components/animate-ui/primitives/effects/effect";
+import { getProjects } from "@/lib/source";
+import type { ProjectItemType } from "@/types";
 
-export default function FeaturedApps() {
-  const projects = getFeaturedApps();
+export default function ProjectList() {
+  const projects: ProjectItemType[] = getProjects();
 
   return (
     <div className="relative mx-auto max-w-7xl px-6 py-8 md:py-10 lg:px-8">
@@ -12,7 +13,7 @@ export default function FeaturedApps() {
       <div className="xl mx-auto grid max-w-5xl grid-cols-1 gap-x-8 gap-y-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
         {projects.map((project, index) => (
           <Effect
-            key={project.id}
+            key={index}
             inView={true}
             inViewOnce={true}
             fade={true}

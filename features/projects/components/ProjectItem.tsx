@@ -12,12 +12,12 @@ import type { ProjectItemType } from "@/features/home/types/ProjectItem";
 import Link from "next/link";
 import BrowserWrapper from "@/features/home/components/BrowserWrapper";
 
-interface ProjectCardProps {
+interface ProjectItemProps {
   project: ProjectItemType;
   index?: number;
 }
 
-export default function ProjectCard({ project, index }: ProjectCardProps) {
+export default function ProjectItem({ project, index }: ProjectItemProps) {
   return (
     <Card
       className="h-full gap-0 rounded-md border-x border-b border-border-edge py-0 shadow-lg transition-all duration-300"

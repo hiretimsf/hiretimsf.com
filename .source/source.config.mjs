@@ -5,14 +5,11 @@ import {
   frontmatterSchema
 } from "fumadocs-mdx/config";
 import { z } from "zod";
-var pages = defineDocs({
-  dir: "content/pages"
-});
 var projects = defineDocs({
-  dir: "content/projects",
+  dir: "features/projects/content",
   docs: defineCollections({
     type: "doc",
-    dir: "content/projects",
+    dir: "features/projects/content",
     schema: frontmatterSchema.extend({
       title: z.string(),
       description: z.string(),
@@ -119,6 +116,5 @@ export {
   education,
   experience,
   featuredApps,
-  pages,
   projects
 };
