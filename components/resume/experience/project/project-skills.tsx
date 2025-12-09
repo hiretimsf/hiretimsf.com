@@ -12,7 +12,7 @@ export default function ProjectSkills({ skills }: ProjectSkillsProps) {
   return (
     <ul
       className={cn(
-        "flex flex-wrap gap-1.5 border-x border-gray-200 px-4 py-4",
+        "flex flex-wrap gap-1.5 border-x border-border-edge px-4 py-4",
       )}
     >
       {skills.map((skill) => (
@@ -30,7 +30,7 @@ interface TagProps {
 
 function Tag({ title }: TagProps) {
   return (
-    <span className="bg-muted/50 text-foreground/80 inline-flex items-center rounded-lg border border-gray-200 px-1.5 py-0.5 font-mono text-sm">
+    <span className="bg-muted/50 text-foreground/80 inline-flex items-center rounded-lg border border-border-edge px-1.5 py-0.5 font-mono text-sm">
       {title}
     </span>
   );

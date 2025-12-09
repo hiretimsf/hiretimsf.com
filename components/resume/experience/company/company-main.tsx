@@ -28,7 +28,7 @@ export default function CompanyMain({
   const _variant = "default" as const;
 
   return (
-    <div className="relative flex flex-col items-center gap-3 border-b border-gray-200 px-6 py-6 md:flex-row md:px-8 md:py-4">
+    <div className="relative flex flex-col items-center gap-3 border-b border-border-edge px-6 py-6 md:flex-row md:px-8 md:py-4">
       <CompanyLogo
         companyLogo={companyLogo}
         companyLogoAlt={companyLogoAlt}

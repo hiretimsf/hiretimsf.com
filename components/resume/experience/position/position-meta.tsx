@@ -29,7 +29,7 @@ export default function PositionMeta({
   ];
 
   return (
-    <div className="mx-auto flex w-full flex-col divide-y divide-gray-200 border border-gray-200 text-center md:mx-0 md:flex-row md:divide-x md:divide-y-0 md:text-left">
+    <div className="mx-auto flex w-full flex-col divide-y divide-border-edge border border-border-edge text-center md:mx-0 md:flex-row md:divide-x md:divide-y-0 md:text-left">
       {metaItems.map(({ icon, value }, index) => (
         <div
           // biome-ignore lint/suspicious/noArrayIndexKey: meta items are static
