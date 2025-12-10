@@ -34,8 +34,10 @@ export function formatDate(date: string, formatStr: string = "MMM d, yyyy") {
 
 export function parseDate(dateStr?: string): number {
   if (!dateStr) return 0;
-  const parts = dateStr.split(" - ");
-  const endDate = parts[parts.length - 1];
+  // Split by hyphen, en dash, or em dash with surrounding spaces
+  const parts = dateStr.split(/\s+[–—-]\s+/);
+  const endDate = parts[parts.length - 1].trim();
+
   if (endDate.toLowerCase().includes("present")) {
     return new Date().getTime();
   }
@@ -44,7 +46,7 @@ export function parseDate(dateStr?: string): number {
 }
 
 /**
- * Gets the most recent start date from a list of positions.
+ * Gets the most recent date (usually end date) from a list of positions.
  * This determines the sorting order of the experience.
  */
 export function getMostRecentDate(
