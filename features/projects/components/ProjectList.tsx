@@ -1,7 +1,7 @@
 import { Effect } from "@/components/animate-ui/primitives/effects/effect";
-import BackgroundDots from "@/components/BackgroundDots";
-import CardItem from "@/components/CardItem";
-import { getProjects } from "@/lib/source";
+import BackgroundDots from "@/features/common/components/BackgroundDots";
+import CardItem from "@/features/common/components/CardItem";
+import { getProjects } from "@/features/projects/data/projectSource";
 import type { ProjectType } from "@/features/projects/types/ProjectType";
 
 export default function ProjectList() {

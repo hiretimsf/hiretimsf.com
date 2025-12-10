@@ -37,7 +37,7 @@ export const metadata: Metadata = {
 export default async function ProjectsPage() {
   return (
     <>
-      <SeparatorHorizontal />
+      <SeparatorHorizontal borderTop={false} />
       <HeadingTitle
         title="PROJECTS"
         textStyleClassName="text-2xl font-bold sm:text-3xl"

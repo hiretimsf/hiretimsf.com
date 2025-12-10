@@ -30,7 +30,7 @@ import { Separator } from "@/components/ui/separator";
 import NAVIGATION_LINKS from "@/config/navigationLinks";
 import SOCIAL_LINKS from "@/config/socialLinks";
 import { useSound } from "@/hooks/use-sound";
-import { Icons } from "@/icons/icons";
+import ContrastIcon from "@/components/header/shared/contrast-icon";
 import { trackEvent } from "@/lib/events";
 
 // --- Types ---
@@ -226,7 +226,7 @@ export function SearchButton() {
               keywords={["theme"]}
               onSelect={createThemeHandler("system")}
             >
-              <Icons.contrast />
+              <ContrastIcon className="size-4" />
               Auto
             </CommandItem>
           </CommandGroup>

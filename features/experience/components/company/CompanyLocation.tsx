@@ -1,8 +1,9 @@
 import { cn } from "@/lib/utils";
-import type { ExperienceItemType } from "@/types";
+import type { ExperienceType } from "../../types/ExperienceType";
+import { countryMap } from "../../utils/maps";
 
 type CompanyLocationProps = Pick<
-  ExperienceItemType,
+  ExperienceType,
   "companyLocation" | "country"
 > & {
   className?: string;
@@ -13,7 +14,7 @@ export default function CompanyLocation({
   companyLocation,
   country,
 }: CompanyLocationProps) {
-  const CountryFlag = country;
+  const CountryFlag = country ? countryMap[country] : undefined;
 
   if (!companyLocation && !CountryFlag) {
     return null;

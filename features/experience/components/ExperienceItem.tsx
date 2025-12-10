@@ -1,11 +1,12 @@
 import { cn } from "@/lib/utils";
-import type { ExperienceItemType } from "@/types";
+import type { ProjectType } from "@/features/projects/types/ProjectType";
+import type { ExperienceType } from "../types/ExperienceType";
 import CompanyMain from "./company/CompanyMain";
 import PositionMain from "./position/PositionMain";
 import { ProjectMain } from "./project/ProjectMain";
 
 type ExperienceItemProps = {
-  experience: ExperienceItemType;
+  experience: ExperienceType & { id: string; projects?: ProjectType[] };
   className?: string;
 };
 
@@ -14,6 +15,7 @@ export default function ExperienceItem({
   className,
 }: ExperienceItemProps) {
   const {
+    id,
     companyLogo,
     companyLogoAlt,
     companyName,
@@ -29,7 +31,7 @@ export default function ExperienceItem({
 
   return (
     <article
-      id={experience.id}
+      id={id}
       className={cn(
         "border-r border-b border-border-edge border-dashed sm:mr-6",
         className,
@@ -57,12 +59,12 @@ export default function ExperienceItem({
       )}
 
       {hasProjects &&
-        projects.map((project, index) => (
+        projects!.map((project, index) => (
           <ProjectMain
             key={project.title}
             project={project}
             hasBorderTop={index !== 0}
-            isLast={index === projects.length - 1}
+            isLast={index === projects!.length - 1}
           />
         ))}
     </article>

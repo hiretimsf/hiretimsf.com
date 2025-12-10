@@ -1,11 +1,11 @@
+import ContactMe from "@/components/ContactMe";
 import { DocsLayout } from "@/components/fuma/fuma-layout";
 import { DocsBody, DocsPage } from "@/components/fuma/fuma-page";
 import Heading from "@/components/HeadingTitle";
 import SeparatorHorizontal from "@/components/SeparatorHorizontal";
 import HEAD from "@/config/seo/head";
-import ContactMe from "@/components/ContactMe";
+import { aboutSource } from "@/features/about/data/aboutSource";
 import { getBaseUrl } from "@/lib/helpers";
-import { aboutSource } from "@/lib/source";
 import { getMDXComponents } from "@/mdx-components";
 import type { HeadType } from "@/types";
 import type { TableOfContents } from "fumadocs-core/toc";
@@ -13,6 +13,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import type { ComponentType } from "react";
+import Web from "@/features/about/components/Web";
 
 // Validate SEO configuration to ensure all required fields are present
 // This helps catch missing or incomplete SEO setup early
@@ -60,11 +61,11 @@ export default async function AboutMePage() {
   const imageUrl = pageData.imageUrl ?? "/images/horizontal-profile-about.jpg";
   const imageAlt =
     pageData.imageAlt ??
-    "Professional headshot of Tim, an Android Developer with 5 years of experience";
+    "Professional headshot of Tim, a Frontend Developer with 5 years of experience";
 
   return (
     <>
-      <SeparatorHorizontal />
+      <SeparatorHorizontal borderTop={false} />
       <main className="mx-auto flex flex-col">
         <div className="relative">
           <Image
@@ -91,7 +92,7 @@ export default async function AboutMePage() {
           >
             <DocsPage toc={pageData.toc}>
               <DocsBody prose={false}>
-                <MDX code={MDX} components={getMDXComponents()} />
+                <MDX code={MDX} components={{ ...getMDXComponents(), Web }} />
               </DocsBody>
             </DocsPage>
           </DocsLayout>

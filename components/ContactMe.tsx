@@ -1,5 +1,5 @@
 import Image from "next/image";
-import BackgroundDots from "@/components/BackgroundDots";
+import BackgroundDots from "@/features/common/components/BackgroundDots";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 

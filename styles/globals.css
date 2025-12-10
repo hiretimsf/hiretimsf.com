@@ -39,6 +39,7 @@
   --color-accent-foreground: var(--accent-foreground);
   --color-border: var(--border);
   --color-edge: var(--edge);
+  --color-border-edge: var(--edge);
   --color-input: var(--input);
   --color-ring: var(--ring);
   --color-info: var(--info);

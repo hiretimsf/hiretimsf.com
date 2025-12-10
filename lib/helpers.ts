@@ -16,34 +16,6 @@ export function getBaseUrl(slug?: string): string {
   return `${baseUrl}${normalizedSlug}`;
 }
 
-/**
- * Truncates text to max length with ellipsis
- */
-export function truncateText(text: string, maxLength = 40): string {
-  return text.length > maxLength ? `${text.substring(0, maxLength)}...` : text;
-}
-
-/**
- * Truncates title to max length with ellipsis
- */
-export function truncateTitle(title: string, maxLength = 60): string {
-  return title.length > maxLength
-    ? `${title.slice(0, maxLength - 3)}...`
-    : title;
-}
-
-/**
- * Truncates description to max length with ellipsis
- */
-export function truncateDescription(
-  description: string,
-  maxLength = 160,
-): string {
-  return description.length > maxLength
-    ? `${description.slice(0, maxLength - 3)}...`
-    : description;
-}
-
 // Slugify
 export function slugify(text: string) {
   return text
@@ -56,12 +28,6 @@ export function slugify(text: string) {
     .replace(/[^\w-]+/g, ``)
     .replace(/--+/g, `-`);
 }
-
-export function getMinutes(minutes: number) {
-  const roundedMinutes = Math.round(minutes);
-  return `${roundedMinutes} min`;
-}
-
 export function formatDate(date: string, formatStr: string = "MMM d, yyyy") {
   return format(new Date(date), formatStr);
 }
@@ -75,4 +41,22 @@ export function parseDate(dateStr?: string): number {
   }
   const timestamp = new Date(endDate).getTime();
   return isNaN(timestamp) ? 0 : timestamp;
+}
+
+/**
+ * Gets the most recent start date from a list of positions.
+ * This determines the sorting order of the experience.
+ */
+export function getMostRecentDate(
+  positions: Array<{ employmentPeriod: string }>,
+): Date {
+  const timestamps = positions
+    .map((pos) => parseDate(pos.employmentPeriod))
+    .filter((timestamp) => timestamp !== 0);
+
+  if (timestamps.length === 0) return new Date(0); // Fallback for no dates
+
+  // Sort descending to get the latest date first
+  timestamps.sort((a, b) => b - a);
+  return new Date(timestamps[0]);
 }

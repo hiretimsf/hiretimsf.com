@@ -1,11 +1,11 @@
-import type { ExperiencePositionItemType } from "@/types";
+import type { ExperienceType } from "../../types/ExperienceType";
 import PositionDescription from "./PositionDescription";
 import PositionMeta from "./PositionMeta";
 import PositionPosition from "./PositionPosition";
 import PositionSkills from "./PositionSkills";
 
 type PositionMainProps = {
-  position: ExperiencePositionItemType;
+  position: ExperienceType["positions"][number];
   hasProjects?: boolean;
 };
 

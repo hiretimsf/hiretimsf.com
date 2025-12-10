@@ -1,5 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
-import GlobeIcon from "@/icons/globe-icon";
+import GlobeIcon from "@/features/experience/icons/globe-icon";
 import { cn } from "@/lib/utils";
 
 type CompanyWebsiteProps = {

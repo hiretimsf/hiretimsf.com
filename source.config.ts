@@ -5,6 +5,58 @@ import {
 } from "fumadocs-mdx/config";
 import { z } from "zod";
 
+export const featuredApps = defineDocs({
+  dir: "features/home/content/featured-apps",
+  docs: defineCollections({
+    type: "doc",
+    dir: "features/home/content/featured-apps",
+    schema: frontmatterSchema.extend({
+      title: z.string(),
+      description: z.string(),
+      category: z.string(),
+      fromDate: z.string(),
+      toDate: z.string(),
+      imageUrl: z.string(),
+      imageAlt: z.string(),
+      featured: z.boolean(),
+      showOnPortfolio: z.boolean().default(true),
+      websiteUrl: z.string().optional(),
+      githubUrl: z.string().optional(),
+      videoEmbedUrl: z.string().optional(),
+      videoEmbedAlt: z.string().optional(),
+      techStacks: z.array(z.string()).optional(),
+    }),
+  }),
+});
+
+export const about = defineDocs({
+  dir: "features/about/content",
+});
+
+export const webApps = defineDocs({
+  dir: "features/about/content/web-apps",
+  docs: defineCollections({
+    type: "doc",
+    dir: "features/about/content/web-apps",
+    schema: frontmatterSchema.extend({
+      title: z.string(),
+      description: z.string(),
+      category: z.string(),
+      fromDate: z.string(),
+      toDate: z.string(),
+      imageUrl: z.string(),
+      imageAlt: z.string(),
+      featured: z.boolean(),
+      showOnPortfolio: z.boolean().default(true),
+      websiteUrl: z.string().optional(),
+      githubUrl: z.string().optional(),
+      videoEmbedUrl: z.string().optional(),
+      videoEmbedAlt: z.string().optional(),
+      techStacks: z.array(z.string()).optional(),
+    }),
+  }),
+});
+
 export const projects = defineDocs({
   dir: "features/projects/content",
   docs: defineCollections({
@@ -88,10 +140,6 @@ export const education = defineDocs({
       projectSlugs: z.array(z.string()).optional(),
     }),
   }),
-});
-
-export const about = defineDocs({
-  dir: "features/about/content",
 });
 
 export const blog = defineDocs({

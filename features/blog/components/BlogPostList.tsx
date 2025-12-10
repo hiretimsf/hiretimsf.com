@@ -1,8 +1,8 @@
 import { Effect } from "@/components/animate-ui/primitives/effects/effect";
-import BackgroundDots from "@/components/BackgroundDots";
+import BackgroundDots from "@/features/common/components/BackgroundDots";
 import { slugify } from "@/lib/helpers";
-import { getBlogPosts } from "@/lib/source";
-import CardItem from "@/components/CardItem";
+import { getBlogPosts } from "@/features/blog/data/blogSource";
+import CardItem from "@/features/common/components/CardItem";
 
 export default function BlogPostList() {
   const posts = getBlogPosts().sort(

@@ -38,7 +38,7 @@ export default async function ExperiencePage() {
   return (
     <>
       <main className="mx-auto flex flex-col">
-        <SeparatorHorizontal />
+        <SeparatorHorizontal borderTop={false} />
         <section className="relative z-10 mx-auto max-w-7xl">
           <Heading title="WORK EXPERIENCE" />
           <SeparatorHorizontal short={true} />

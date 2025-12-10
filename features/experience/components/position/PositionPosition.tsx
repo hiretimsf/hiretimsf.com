@@ -1,11 +1,12 @@
 import React from "react";
+import { iconMap } from "../../utils/maps";
 
 type IconComponent = React.ComponentType<{
   className?: string;
 }>;
 
 interface PositionPositionProps {
-  icon: React.ReactNode | IconComponent;
+  icon?: string | React.ReactNode | IconComponent;
   title: string;
 }
 
@@ -15,14 +16,25 @@ export default function PositionPosition({
 }: PositionPositionProps) {
   let iconNode: React.ReactNode = null;
 
-  if (typeof icon === "function") {
+  if (typeof icon === "string") {
+    const ResolvedIcon = iconMap[icon];
+    if (ResolvedIcon) {
+      if (typeof ResolvedIcon === "function") {
+        iconNode = React.createElement(ResolvedIcon as IconComponent, {
+          className: "size-4",
+        });
+      } else if (React.isValidElement(ResolvedIcon)) {
+        iconNode = ResolvedIcon;
+      }
+    }
+  } else if (typeof icon === "function") {
     iconNode = React.createElement(icon as IconComponent, {
       className: "size-4",
     });
   } else if (React.isValidElement(icon)) {
     iconNode = icon;
   } else if (icon) {
-    iconNode = icon;
+    iconNode = icon as React.ReactNode;
   }
 
   return (

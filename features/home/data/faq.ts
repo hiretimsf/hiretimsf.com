@@ -1,6 +1,6 @@
-import type { FaqItemType } from "@/features/home/types/FaqItem";
+import type { FaqType } from "@/features/home/types/FaqType";
 
-export const FAQ_ITEMS: FaqItemType[] = [
+export const FAQ_ITEMS: FaqType[] = [
   {
     id: "faq-1",
     question: "Why should you hire me?",

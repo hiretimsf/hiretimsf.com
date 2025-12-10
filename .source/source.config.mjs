@@ -5,6 +5,55 @@ import {
   frontmatterSchema
 } from "fumadocs-mdx/config";
 import { z } from "zod";
+var featuredApps = defineDocs({
+  dir: "features/home/content/featured-apps",
+  docs: defineCollections({
+    type: "doc",
+    dir: "features/home/content/featured-apps",
+    schema: frontmatterSchema.extend({
+      title: z.string(),
+      description: z.string(),
+      category: z.string(),
+      fromDate: z.string(),
+      toDate: z.string(),
+      imageUrl: z.string(),
+      imageAlt: z.string(),
+      featured: z.boolean(),
+      showOnPortfolio: z.boolean().default(true),
+      websiteUrl: z.string().optional(),
+      githubUrl: z.string().optional(),
+      videoEmbedUrl: z.string().optional(),
+      videoEmbedAlt: z.string().optional(),
+      techStacks: z.array(z.string()).optional()
+    })
+  })
+});
+var about = defineDocs({
+  dir: "features/about/content"
+});
+var webApps = defineDocs({
+  dir: "features/about/content/web-apps",
+  docs: defineCollections({
+    type: "doc",
+    dir: "features/about/content/web-apps",
+    schema: frontmatterSchema.extend({
+      title: z.string(),
+      description: z.string(),
+      category: z.string(),
+      fromDate: z.string(),
+      toDate: z.string(),
+      imageUrl: z.string(),
+      imageAlt: z.string(),
+      featured: z.boolean(),
+      showOnPortfolio: z.boolean().default(true),
+      websiteUrl: z.string().optional(),
+      githubUrl: z.string().optional(),
+      videoEmbedUrl: z.string().optional(),
+      videoEmbedAlt: z.string().optional(),
+      techStacks: z.array(z.string()).optional()
+    })
+  })
+});
 var projects = defineDocs({
   dir: "features/projects/content",
   docs: defineCollections({
@@ -87,9 +136,6 @@ var education = defineDocs({
     })
   })
 });
-var about = defineDocs({
-  dir: "features/about/content"
-});
 var blog = defineDocs({
   dir: "features/blog/content",
   docs: defineCollections({
@@ -116,5 +162,7 @@ export {
   blog,
   education,
   experience,
-  projects
+  featuredApps,
+  projects,
+  webApps
 };

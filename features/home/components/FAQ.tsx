@@ -1,4 +1,4 @@
-import BackgroundDots from "@/components/BackgroundDots";
+import BackgroundDots from "@/features/common/components/BackgroundDots";
 import { Effect } from "@/components/animate-ui/primitives/effects/effect";
 import {
   Accordion,
@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/accordion";
 import { FAQ_ITEMS } from "@/features/home/data/faq";
 import { cn } from "@/lib/utils";
-import type { FaqItemType } from "@/features/home/types/FaqItem";
+import type { FaqType } from "@/features/home/types/FaqType";
 
 type FaqSectionProps = {
   className?: string;
@@ -27,7 +27,7 @@ const FaqSection = ({ className = "" }: FaqSectionProps) => {
         collapsible
         className="bg-background mx-auto max-w-xl divide-y divide-dashed divide-border-edge border-x border-dashed border-border-edge"
       >
-        {FAQ_ITEMS.map((item: FaqItemType, index: number) => (
+        {FAQ_ITEMS.map((item: FaqType, index: number) => (
           // biome-ignore lint/suspicious/noArrayIndexKey: faq items are static
           <Effect
             key={index}

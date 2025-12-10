@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { SKILLS } from "@/features/home/data/skills";
 import { cn } from "@/lib/utils";
-import type { ListItemType } from "@/features/home/types/ListItem";
+import type { SkillType } from "@/features/home/types/SkillType";
 import Link from "next/link";
 import { IoCheckmarkCircle as CheckmarkIcon } from "react-icons/io5";
 import { Shine } from "@/components/animate-ui/primitives/effects/shine";
@@ -54,7 +54,7 @@ function HeroContent() {
         className="text-foreground space-y-2 divide-y divide-dashed divide-border-edge"
         aria-label="Skills and qualifications"
       >
-        {SKILLS.map((item: ListItemType, index: number) => {
+        {SKILLS.map((item: SkillType, index: number) => {
           const itemId = item.name ? `${item.name}-${index}` : `item-${index}`;
 
           return (

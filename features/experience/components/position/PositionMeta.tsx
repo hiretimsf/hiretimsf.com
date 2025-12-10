@@ -1,6 +1,6 @@
-import BriefcaseIcon from "@/icons/briefcase-icon";
-import CalendarIcon from "@/icons/calendar-icon";
-import ClockIcon from "@/icons/clock-icon";
+import BriefcaseIcon from "@/features/experience/icons/briefcase-icon";
+import CalendarIcon from "@/features/common/icons/calendar-icon";
+import ClockIcon from "@/features/common/icons/clock-icon";
 
 interface PositionMetaProps {
   employmentType: string;
