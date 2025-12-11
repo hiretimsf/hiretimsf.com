@@ -1,6 +1,6 @@
 # [hiretimsf.com](https://hiretimsf.com)
 
-A minimal, pixel-perfect dev portfolio to showcase my work as a Software Engineer.
+A minimal portfolio to showcase my work as a Design Engineer and Frontend Developer.
 
 Check out the live site: [hiretimsf.com](https://hiretimsf.com)
 
@@ -12,14 +12,13 @@ Check out the live site: [hiretimsf.com](https://hiretimsf.com)
 - Tailwind CSS v4
 - shadcn/ui
 - Motion
+- Fumadocs
 
 ### Features
 
 - Clean & modern design
 - Light/Dark themes
-- vCard integration
 - SEO optimized ([JSON-LD schema](https://json-ld.org), sitemap, robots)
-- Installable as PWA
 - Analytics with [Vercel Analytics](https://vercel.com/analytics)
 
 ## Development
@@ -43,14 +42,14 @@ The site will be available at [http://localhost:1408](http://localhost:1408).
 
 ### Scripts
 
-| Command | Description |
-|---------|-------------|
-| `npm run dev` | Start development server |
-| `npm run build` | Build for production |
-| `npm run start` | Start production server |
-| `npm run preview` | Build and preview production |
-| `npm run lint` | Run ESLint |
-| `npm run format:write` | Format code with Prettier |
+| Command                | Description                  |
+| ---------------------- | ---------------------------- |
+| `npm run dev`          | Start development server     |
+| `npm run build`        | Build for production         |
+| `npm run start`        | Start production server      |
+| `npm run preview`      | Build and preview production |
+| `npm run lint`         | Run ESLint                   |
+| `npm run format:write` | Format code with Prettier    |
 
 ## License
 

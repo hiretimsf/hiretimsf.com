@@ -6,8 +6,8 @@ This guide provides instructions on how to set up and run the project locally.
 
 Ensure you have the following installed:
 
-- [Node.js](https://nodejs.org/) (v20+ recommended)
-- [npm](https://www.npmjs.com/) or [pnpm](https://pnpm.io/)
+- [Node.js](https://nodejs.org/) (Latest LTS version recommended)
+- [pnpm](https://pnpm.io/)
 - [Git](https://git-scm.com/)
 
 ## Setup
@@ -22,7 +22,7 @@ cd hiretimsf.com
 ### 2. Install dependencies
 
 ```bash
-npm install
+pnpm i
 ```
 
 ### 3. Configure Environment Variables
@@ -38,30 +38,19 @@ Then, update the necessary environment variables inside `.env.local`.
 ### 4. Run the development server
 
 ```bash
-npm run dev
+pnpm dev
 ```
 
-The application should now be available at http://localhost:1408
+The application should now be available at http://localhost:3000
 
 ## Building for Production
 
 ```bash
-npm run build
+pnpm build
 ```
 
 After building, start the application with:
 
 ```bash
-npm run start
+NODE_ENV=production pnpm start
 ```
-
-## Scripts
-
-| Command | Description |
-|---------|-------------|
-| `npm run dev` | Start development server |
-| `npm run build` | Build for production |
-| `npm run start` | Start production server |
-| `npm run preview` | Build and preview locally |
-| `npm run lint` | Run ESLint |
-| `npm run format:write` | Format code with Prettier |

@@ -1,33 +1,10 @@
 import type * as React from "react";
-import type { IconType } from "react-icons";
-
 export interface HeadType {
   page: string;
   title: string;
   description: string;
   slug: string;
 }
-
-export interface NavigationLink {
-  href: string;
-  label: string;
-}
-
-export interface SocialLink {
-  href: string;
-  label: string;
-}
-
-export type CategoryType = {
-  name: string;
-  slug: string;
-  background?: React.ComponentType<{ className?: string }>;
-  icon?: React.ComponentType<{ className?: string }>;
-  bigIcon?: React.ComponentType<{ className?: string }>;
-  description: string;
-  weight: number;
-};
-
 export type NavigationLinkType = {
   href: string;
   label: string;
@@ -41,17 +18,38 @@ export type SocialLinkType = {
   icon: React.ComponentType<{ className?: string }>;
   label: string;
 };
-
-export type ProjectSubNavigationLinkType = {
+export type TechStackType = {
+  key: string;
   title: string;
-  description: string;
-  image?: string;
   href: string;
-  icon?: IconType;
+  categories: string[];
+  theme?: boolean;
 };
 
-export interface BulletListItem {
-  name?: string;
-  description: string;
-  href?: string;
-}
+export type User = {
+  firstName: string;
+  lastName: string;
+  displayName: string;
+  username: string;
+  gender: string;
+  pronouns: string;
+  bio: string;
+  flipSentences: string[];
+  address: string;
+  phoneNumber: string;
+  email: string;
+  website: string;
+  jobTitle: string;
+  jobs: {
+    title: string;
+    company: string;
+    website: string;
+  }[];
+  about: string;
+  avatar: string;
+  ogImage: string;
+  namePronunciationUrl: string;
+  keywords: string[];
+  timeZone: string;
+  dateCreated: string;
+};
