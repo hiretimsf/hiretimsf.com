@@ -1,7 +1,7 @@
 {
   "name": "hiretimsf.com",
   "version": "0.1.0",
-  "description": "A minimal, pixel-perfect dev portfolio.",
+  "description": "A minimal portfolio and blog to showcase my work as a Design Engineer and Frontend Developer.",
   "homepage": "https://hiretimsf.com",
   "license": "MIT",
   "author": {
@@ -76,6 +76,7 @@
     "dayjs": "^1.11.19",
     "embla-carousel": "^8.6.0",
     "embla-carousel-react": "^8.6.0",
+    "feed": "^5.1.0",
     "fumadocs-core": "^16.0.11",
     "fumadocs-mdx": "^13.0.8",
     "fumadocs-ui": "^16.0.11",

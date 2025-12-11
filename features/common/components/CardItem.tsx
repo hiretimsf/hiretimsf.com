@@ -39,7 +39,7 @@ type CardItemProps =
 
 export default function CardItem({ index, item, type }: CardItemProps) {
   const isBlog = type === "blog";
-  const href = isBlog ? `/blog/${slugify(item.title)}` : undefined;
+  const href = isBlog ? `/blog/${item.slug}` : undefined;
 
   return (
     <Card
@@ -128,7 +128,7 @@ const BlogContent = ({
   item: BlogPostType;
   index: number;
 }) => {
-  const href = `/blog/${slugify(item.title)}`;
+  const href = `/blog/${item.slug}`;
   return (
     <>
       <CardHeader className="gap-0">

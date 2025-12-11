@@ -1,7 +1,6 @@
 import { Effect } from "@/components/animate-ui/primitives/effects/effect";
-import BackgroundDots from "@/features/common/components/BackgroundDots";
-import { slugify } from "@/lib/helpers";
 import { getBlogPosts } from "@/features/blog/data/blogSource";
+import BackgroundDots from "@/features/common/components/BackgroundDots";
 import CardItem from "@/features/common/components/CardItem";
 
 export default function BlogPostList() {
@@ -16,7 +15,7 @@ export default function BlogPostList() {
         {posts.map((post, index) => {
           return (
             <Effect
-              key={slugify(post.title)}
+              key={post.slug}
               inView={true}
               inViewOnce={true}
               fade={true}

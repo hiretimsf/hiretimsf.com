@@ -54,7 +54,7 @@ const HEAD: HeadType[] = [
     page: "Projects",
     title: truncateTitle("Projects | High-Quality Web & Mobile Apps | Tim"),
     description: truncateDescription(
-      "Showcasing pixel-perfect applications built with Next.js, React, TypeScript and modern front-end technologies.",
+      "Showcasing applications built with Next.js, React, TypeScript and modern front-end technologies.",
     ),
     slug: "/projects",
   },

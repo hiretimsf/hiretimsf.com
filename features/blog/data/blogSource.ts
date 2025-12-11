@@ -25,6 +25,9 @@ export function getBlogPosts(): BlogPostType[] {
     };
 
     const pageWithFile = page as BlogPage & { file: { path: string } };
+    const slug = pageWithFile.file?.path
+      ? pageWithFile.file.path.replace(/\.mdx?$/, "")
+      : "";
 
     const filePath = pageWithFile.file?.path
       ? path.join(
@@ -47,8 +50,10 @@ export function getBlogPosts(): BlogPostType[] {
         tags: data.tags,
         seo: data.seo,
         body: () => null,
+        content: "",
         readingTime: "",
         readingTimeMinutes: 0,
+        slug,
       };
     }
 
@@ -67,8 +72,10 @@ export function getBlogPosts(): BlogPostType[] {
       tags: data.tags,
       seo: data.seo,
       body: data.body,
+      content: contentStr,
       readingTime: readingTimeStats.text,
       readingTimeMinutes: readingTimeStats.minutes,
+      slug,
     };
   });
 }

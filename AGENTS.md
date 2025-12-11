@@ -4,7 +4,7 @@ This guide provides essential information for AI agents working with the hiretim
 
 ## Project Overview
 
-**hiretimsf.com** is a minimal, pixel-perfect dev portfolio built with modern web technologies. It serves as:
+**hiretimsf.com** is a minimal portfolio built with modern web technologies. It serves as:
 
 - Personal portfolio for Tim (@hiretimsf)
 - Showcase for work experience and projects
@@ -13,9 +13,7 @@ This guide provides essential information for AI agents working with the hiretim
 
 - **Clean & modern design** - Minimalist interface with attention to detail
 - **Light/Dark themes** - Seamless theme switching with system preference support
-- **vCard integration** - Downloadable contact card
 - **SEO optimized** - JSON-LD schema, sitemap, robots.txt
-- **PWA support** - Installable as Progressive Web App
 
 ### Tech Stack
 
