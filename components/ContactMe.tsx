@@ -1,5 +1,4 @@
 import Image from "next/image";
-import BackgroundDots from "@/features/common/components/BackgroundDots";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
@@ -28,15 +27,15 @@ const ContactMe = ({
       <div className="w-full flex-auto px-6 text-center sm:text-left">
         <h2
           id="contact-heading"
-          className="text-foreground z-10 text-center text-4xl font-semibold tracking-tight text-pretty sm:text-left sm:text-5xl"
+          className="text-white z-10 text-center text-4xl font-semibold tracking-tight text-pretty sm:text-left sm:text-5xl"
         >
           {heading}
         </h2>
-        <p className="text-foreground/80 mt-6 text-center text-lg/8 text-pretty sm:text-left sm:text-lg">
+        <p className="text-white/80 mt-6 text-center text-lg/8 text-pretty sm:text-left sm:text-lg">
           {description}
         </p>
         <div className="mt-6">
-          <Button asChild>
+          <Button asChild variant="outline">
             <Link
               href={`mailto:${email}`}
               target="_blank"
@@ -58,7 +57,12 @@ const ContactMe = ({
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
         />
       </div>
-      <BackgroundDots gridId="contact-me" className="text-gray-200/80" />
+      <Image
+        src="/images/background.jpg"
+        alt=""
+        fill
+        className="absolute inset-0 -z-10 object-cover"
+      />
     </section>
   );
 };
