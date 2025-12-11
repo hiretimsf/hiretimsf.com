@@ -43,7 +43,7 @@ function HeroContent() {
         slide={{ direction: "up", offset: 10 }}
         delay={300}
       >
-        <p className="text-foreground/80 px-4 text-lg/8 font-mono text-left py-4">
+        <p className="text-foreground/80 px-4 text-lg/8 text-left py-4">
           I&apos;m a Design Engineer and Frontend Developer based in the San
           Francisco Bay Area. I help people solve real-world problems by
           building web and mobile apps.

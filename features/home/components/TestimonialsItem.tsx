@@ -36,6 +36,8 @@ export default memo(function TestimonialItem({
         <Tweet id={item.id} onError={() => setHasError(true)} />
       ) : (
         <iframe
+          suppressHydrationWarning
+          key={`${item.url}-${index}`}
           src={item.url}
           className="aspect-video w-full rounded-xl"
           allowFullScreen

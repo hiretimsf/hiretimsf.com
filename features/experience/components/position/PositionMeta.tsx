@@ -34,7 +34,7 @@ export default function PositionMeta({
         <div
           // biome-ignore lint/suspicious/noArrayIndexKey: meta items are static
           key={index}
-          className={`flex items-center justify-center gap-2 px-4 py-2 text-center text-muted-foreground text-lg text-balance md:text-left md:text-sm ${
+          className={`flex items-center justify-center gap-2 px-4 py-2 text-center font-mono text-muted-foreground text-lg text-balance md:text-left md:text-sm ${
             index === 0 ? "md:pl-5" : ""
           }`}
         >

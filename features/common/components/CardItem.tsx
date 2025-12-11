@@ -135,7 +135,7 @@ const BlogContent = ({
         <div className="mb-2 flex w-full flex-row items-center border-b border-dashed border-border-edge">
           <div className="flex items-center px-2 py-2">
             <DateIcon size={20} className="mr-2 size-5 text-muted-foreground" />
-            <span className="text-sm text-muted-foreground">
+            <span className="text-sm text-muted-foreground font-mono">
               {item.created ? formatDate(item.created as string) : "No date"}
             </span>
           </div>
@@ -151,7 +151,7 @@ const BlogContent = ({
                   size={20}
                   className="mr-2 size-5 text-muted-foreground"
                 />
-                <span className="text-sm text-muted-foreground">
+                <span className="text-sm text-muted-foreground font-mono">
                   {item.readingTimeMinutes} min
                 </span>
               </div>
@@ -224,7 +224,7 @@ const ProjectContent = ({
           {item.fromDate ? (
             <div className="flex items-center">
               <CalendarIcon className="mr-2 size-4 text-muted-foreground" />
-              <span className="text-sm text-muted-foreground">
+              <span className="text-sm text-muted-foreground font-mono">
                 {item.fromDate} - {item.toDate}
               </span>
             </div>

@@ -30,6 +30,7 @@ function EmbedVideoItem({ embedUrl, embedAlt }: EmbedVideoItemProps) {
       <BrowserWrapper>
         <div className="relative aspect-video w-full overflow-hidden">
           <iframe
+            suppressHydrationWarning
             src={embedUrl}
             title={embedAlt}
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

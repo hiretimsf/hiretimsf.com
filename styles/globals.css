@@ -53,8 +53,8 @@
   --color-selection: var(--selection);
   --color-selection-foreground: var(--selection-foreground);
 
-  --font-sans: var(--font-sans);
-  --font-mono: var(--font-mono);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
 
   --shadow-popover: var(--shadow-popover);
 
@@ -315,6 +315,10 @@
   /* html {
     @apply motion-safe:scroll-smooth;
   } */
+
+  html {
+    @apply overflow-x-hidden;
+  }
 
   body {
     @apply bg-background font-sans text-foreground antialiased overflow-x-hidden;
