@@ -53,3 +53,11 @@ export type User = {
   timeZone: string;
   dateCreated: string;
 };
+
+export type LinkItem = {
+  href: string;
+  target?: string;
+  icon: React.ComponentType<{ className?: string }>;
+  label: string;
+  ariaLabel: string;
+};

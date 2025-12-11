@@ -12,13 +12,13 @@ const SocialLink: FC<SocialLinkType> = ({ href, icon: Icon, label }) => {
     <NavigationMenuLink asChild>
       <Link
         onClick={() => playClick()}
-        className="group hover:bg-accent -mx-2 rounded-[8px] p-2 transition-colors hover:mask-r-from-80%"
+        className="group hover:bg-accent -mx-2 rounded-[8px] p-2 transition-colors"
         target="_blank"
         rel="noopener noreferrer"
         href={href}
       >
         <div className="flex items-center justify-between gap-3">
-          <div className="border-border shrink-0 rounded-[10px] border p-1.5">
+          <div className="border-border-edge bg-background shrink-0 rounded-[10px] border p-1.5">
             <Icon
               className="text-foreground group-hover:text-accent-foreground size-4 transition-colors duration-200"
               aria-hidden="true"

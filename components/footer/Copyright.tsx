@@ -1,46 +1,60 @@
 import FooterLink, {
   FOOTER_LINK_DEFAULT_STYLE,
 } from "@/components/footer/FooterLink";
+import FooterSection from "@/components/footer/FooterSection";
 import Separator from "@/components/footer/Separator";
+import { COPYRIGHT_LINKS } from "@/config/copyrightLinks";
 import { cn } from "@/lib/utils";
 
-import { LockIcon, FileTextIcon, CopyrightIcon } from "lucide-react";
-
 export default function Copyright() {
+  const renderLink = (key: keyof typeof COPYRIGHT_LINKS) => {
+    const link = COPYRIGHT_LINKS[key];
+    const Icon = link.icon;
+
+    return (
+      <FooterLink
+        href={link.href}
+        icon={<Icon className={cn(FOOTER_LINK_DEFAULT_STYLE, "size-4")} />}
+        label={link.label}
+        ariaLabel={link.ariaLabel}
+      />
+    );
+  };
+
   return (
-    <div className="screen-line-after max-w-5xl w-full mx-auto border-x border-edge">
-      <div className="mx-auto max-w-2xl flex items-center justify-center gap-3 px-4 border-x border-edge sm:flex-row flex-col">
-        <FooterLink
-          href="/privacy"
-          icon={
-            <LockIcon className={cn(FOOTER_LINK_DEFAULT_STYLE, "size-4")} />
-          }
-          label="Privacy Policy"
-          ariaLabel="View privacy policy"
-          hideOnMobile={true}
-        />
+    <>
+      {/* Desktop View */}
+      <FooterSection
+        className="hidden sm:block"
+        innerClassName="max-w-2xl flex-col sm:flex-row"
+      >
+        {renderLink("privacy")}
         <Separator />
-        <FooterLink
-          href="/"
-          icon={
-            <CopyrightIcon
-              className={cn(FOOTER_LINK_DEFAULT_STYLE, "size-4")}
-            />
-          }
-          label={`${new Date().getFullYear()} - All rights reserved.`}
-          ariaLabel="View copyright information"
-        />
+        {renderLink("copyright")}
         <Separator />
-        <FooterLink
-          href="/terms"
-          icon={
-            <FileTextIcon className={cn(FOOTER_LINK_DEFAULT_STYLE, "size-4")} />
-          }
-          label="Terms of Service"
-          ariaLabel="View terms of service"
-          hideOnMobile={true}
-        />
-      </div>
-    </div>
+        {renderLink("terms")}
+      </FooterSection>
+
+      {/* Mobile View */}
+      <FooterSection
+        className="sm:hidden"
+        innerClassName="max-w-2xl divide-x divide-border-edge"
+      >
+        <div className="flex items-center justify-center gap-3">
+          {renderLink("privacy")}
+        </div>
+        <div className="flex items-center justify-center gap-3">
+          {renderLink("terms")}
+        </div>
+      </FooterSection>
+      <FooterSection
+        className="sm:hidden"
+        innerClassName="max-w-2xl border-b border-edge"
+      >
+        <div className="flex items-center justify-center py-2">
+          {renderLink("copyright")}
+        </div>
+      </FooterSection>
+    </>
   );
 }

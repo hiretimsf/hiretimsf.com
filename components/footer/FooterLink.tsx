@@ -9,7 +9,6 @@ type FooterLinkProps = {
   label: string;
   ariaLabel?: string;
   target?: React.HTMLAttributeAnchorTarget;
-  hideOnMobile?: boolean;
 };
 
 export const FOOTER_LINK_DEFAULT_STYLE =
@@ -21,7 +20,6 @@ export default function FooterLink({
   label,
   ariaLabel,
   target,
-  hideOnMobile = false,
 }: FooterLinkProps) {
   return (
     <Link
@@ -29,7 +27,6 @@ export default function FooterLink({
       className={cn(
         buttonVariants({ variant: "link" }),
         "group flex items-center gap-1 text-sm font-medium",
-        hideOnMobile && "hidden sm:flex items-center",
       )}
       aria-label={ariaLabel || label}
       prefetch={true}
