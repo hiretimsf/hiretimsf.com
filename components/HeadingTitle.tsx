@@ -69,7 +69,7 @@ export default function HeadingTitle({
       >
         <h2
           className={cn(
-            "text-foreground relative mx-auto text-center tracking-tight underline underline-offset-8",
+            "text-foreground relative mx-auto text-center tracking-tight",
             textStyleClassName,
           )}
         >
