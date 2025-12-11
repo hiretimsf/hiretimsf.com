@@ -5,7 +5,7 @@ import { ScrollToTop } from "@/components/ScrollToTop";
 export default function AppLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="mx-auto min-h-screen w-full">
-      <SiteHeader showProgressBar={true} />
+      <SiteHeader />
       <main className="mx-auto max-w-5xl w-full text-center border-x border-edge">
         {children}
       </main>
