@@ -1,3 +1,4 @@
+import type { LinkItem } from "@/types";
 import FooterLink, {
   FOOTER_LINK_DEFAULT_STYLE,
 } from "@/components/footer/FooterLink";
@@ -8,7 +9,7 @@ import { cn } from "@/lib/utils";
 
 export default function Copyright() {
   const renderLink = (key: keyof typeof COPYRIGHT_LINKS) => {
-    const link = COPYRIGHT_LINKS[key];
+    const link: LinkItem = COPYRIGHT_LINKS[key];
     const Icon = link.icon;
 
     return (

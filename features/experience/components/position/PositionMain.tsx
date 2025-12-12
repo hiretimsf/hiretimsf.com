@@ -1,25 +1,37 @@
-import type { ExperienceType } from "../../types/ExperienceType";
 import PositionDescription from "./PositionDescription";
 import PositionMeta from "./PositionMeta";
 import PositionPosition from "./PositionPosition";
 import PositionSkills from "./PositionSkills";
 
-type PositionMainProps = {
-  position: ExperienceType["positions"][number];
-  hasProjects?: boolean;
-};
+interface PositionMainProps {
+  employmentType: string;
+  employmentPeriod: string;
+  employmentDuration: string;
+  description: string;
+  skills: string[];
+  icon: string;
+  title: string;
+}
 
-export default function PositionMain({ position }: PositionMainProps) {
+export default function PositionMain({
+  employmentType,
+  employmentPeriod,
+  employmentDuration,
+  description,
+  skills,
+  icon,
+  title,
+}: PositionMainProps) {
   return (
     <div className="flex flex-col px-6 md:px-8">
-      <PositionPosition icon={position.icon} title={position.title} />
+      <PositionPosition icon={icon} title={title} />
       <PositionMeta
-        employmentType={position.employmentType ?? ""}
-        employmentPeriod={position.employmentPeriod}
-        employmentDuration={position.employmentDuration ?? ""}
+        employmentType={employmentType}
+        employmentPeriod={employmentPeriod}
+        employmentDuration={employmentDuration}
       />
-      <PositionDescription description={position.description} />
-      <PositionSkills skills={position.skills} />
+      <PositionDescription description={description} />
+      <PositionSkills skills={skills} />
     </div>
   );
 }
