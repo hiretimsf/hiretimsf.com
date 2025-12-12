@@ -5,40 +5,40 @@ const HEAD: HeadType[] = [
   {
     page: "Home",
     title: truncateTitle(
-      "Tim | Design Engineer & Frontend Developer | 5+ Years Exp",
+      "Tim | Frontend Developer | 5+ Years Exp",
     ),
     description: truncateDescription(
-      "Design Engineer with 5+ years experience. Pixel-perfect execution in Next.js, React, & TypeScript. Building high-quality, user-centric web & mobile apps.",
+      "Frontend Developer with 5+ years experience. Pixel-perfect execution in Next.js, React, & TypeScript. Building high-quality, user-centric web & mobile apps.",
     ),
     slug: "/",
   },
   {
     page: "About",
     title: truncateTitle(
-      "About Tim | Design Engineer & Frontend Developer | 5+ Years Exp",
+      "About Tim | Frontend Developer | 5+ Years Exp",
     ),
     description: truncateDescription(
-      "Design Engineer with 5+ years experience. Pixel-perfect execution in Next.js, React, & TypeScript. Building high-quality, user-centric web & mobile apps.",
+      "Frontend Developer with 5+ years experience. Pixel-perfect execution in Next.js, React, & TypeScript. Building high-quality, user-centric web & mobile apps.",
     ),
     slug: "/about",
   },
   {
     page: "Experience",
     title: truncateTitle(
-      "WorkExperience | Design Engineer & Frontend Developer | 5+ Years Exp",
+      "WorkExperience | Frontend Developer | 5+ Years Exp",
     ),
     description: truncateDescription(
-      "Work experience of Tim, a Design Engineer and Frontend Developer based in San Francisco Bay Area.",
+      "Work experience of Tim, a Frontend Developer based in San Francisco Bay Area.",
     ),
     slug: "/experience",
   },
   {
     page: "Education",
     title: truncateTitle(
-      "Education of Tim | Design Engineer & Frontend Developer | 5+ Years Exp",
+      "Education of Tim | Frontend Developer | 5+ Years Exp",
     ),
     description: truncateDescription(
-      "Education of Tim, a Design Engineer and Frontend Developer.",
+      "Education of Tim, a Frontend Developer.",
     ),
     slug: "/education",
   },
@@ -60,7 +60,7 @@ const HEAD: HeadType[] = [
   },
   {
     page: "Contact",
-    title: truncateTitle("Contact Tim | Hire a Design Engineer | 5+ Years Exp"),
+    title: truncateTitle("Contact Tim | Hire a Frontend Developer | 5+ Years Exp"),
     description: truncateDescription(
       "Ready to build high-quality, user-centric applications? Get in touch with Tim for pixel-perfect execution.",
     ),
@@ -70,7 +70,7 @@ const HEAD: HeadType[] = [
     page: "Privacy",
     title: truncateTitle("Privacy Policy | Hire Tim"),
     description: truncateDescription(
-      "Design Engineer with 5+ years experience. Pixel-perfect execution in Next.js, React, & TypeScript. Building high-quality, user-centric web & mobile apps.",
+      "Frontend Developer with 5+ years experience. Pixel-perfect execution in Next.js, React, & TypeScript. Building high-quality, user-centric web & mobile apps.",
     ),
     slug: "/privacy",
   },

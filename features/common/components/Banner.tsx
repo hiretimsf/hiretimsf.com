@@ -26,7 +26,7 @@ export default function Banner() {
       </div>
       <div className="aspect-video relative w-full overflow-hidden rounded-lg border border-border-edge">
         <Image
-          alt="Looking for a Design Engineer?"
+          alt="Looking for a Frontend Developer?"
           fill
           className="blur-0 object-cover"
           src="/images/twitter-image.jpg"

@@ -5,7 +5,7 @@ const allPosts = getBlogPosts();
 
 const content = `# hiretimsf.com
 
-> A minimal portfolio, and blog to showcase my work as a Design Engineer and Frontend Developer.
+> A minimal portfolio, and blog to showcase my work as a Frontend Developer.
 
 - [About](${SITE_INFO.url}/about.md): A quick intro to me, my tech stack, and how to connect.
 - [Experience](${SITE_INFO.url}/experience.md): Highlights from my career and key roles I've taken on.

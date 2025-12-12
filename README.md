@@ -1,6 +1,6 @@
 # [hiretimsf.com](https://hiretimsf.com)
 
-A minimal portfolio to showcase my work as a Design Engineer and Frontend Developer.
+A minimal portfolio to showcase my work as a Frontend Developer.
 
 Check out the live site: [hiretimsf.com](https://hiretimsf.com)
 

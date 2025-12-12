@@ -14,10 +14,10 @@ interface ContactMeProps {
 const ContactMe = ({
   className = "",
   email = "hiretimsf@gmail.com",
-  heading = "Looking for a Design Engineer?",
+  heading = "Looking for a Frontend Developer?",
   description = "I'm available for in-person or remote work.",
   buttonText = "Contact Me",
-  imageAlt = "Professional design engineer ready to collaborate on projects",
+  imageAlt = "Professional frontend developer ready to collaborate on projects",
 }: ContactMeProps) => {
   return (
     <section

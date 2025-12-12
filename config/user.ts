@@ -9,7 +9,6 @@ export const USER: User = {
   pronouns: "he/him",
   bio: "Frontend Developer based in San Francisco.",
   flipSentences: [
-    "Design Engineer",
     "Frontend Developer",
     "Based in San Francisco",
     "Passionate about building high-quality web and mobile apps",
@@ -27,7 +26,7 @@ export const USER: User = {
     },
   ],
   about: `
-Hello! I am Tim, a Design Engineer and Frontend Developer based in San Francisco.
+Hello! I am Tim, a Frontend Developer based in San Francisco.
 
 I specialize in building high-quality web and mobile apps using modern technologies.
 

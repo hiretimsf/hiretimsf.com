@@ -13,7 +13,7 @@ export default function Home() {
       <Hero
         imageSrcDesktop="/images/vertical-profile.jpg"
         imageSrcMobile="/images/horizontal-profile.jpg"
-        imageAlt="Professional headshot of Tim, a Design Engineer and Frontend Developer based in San Francisco Bay Area"
+        imageAlt="Professional headshot of Tim, a Frontend Developer based in San Francisco Bay Area"
       />
       <SeparatorHorizontal short={true} />
       <HeadingTitle
