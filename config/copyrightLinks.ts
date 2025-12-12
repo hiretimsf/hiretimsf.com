@@ -9,7 +9,6 @@ export const COPYRIGHT_LINKS = {
     ariaLabel: "View privacy policy",
   },
   copyright: {
-    href: "/",
     icon: CopyrightIcon,
     label: `${new Date().getFullYear()} - All rights reserved.`,
     ariaLabel: "View copyright information",

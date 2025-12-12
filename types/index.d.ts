@@ -55,7 +55,7 @@ export type User = {
 };
 
 export type LinkItem = {
-  href: string;
+  href?: string;
   target?: string;
   icon: React.ComponentType<{ className?: string }>;
   label: string;
