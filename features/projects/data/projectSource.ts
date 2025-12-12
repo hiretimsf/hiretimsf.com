@@ -1,4 +1,4 @@
-import { projects } from "@/.source";
+import { projects } from "@/.source/server";
 import type { Source, SourceConfig } from "fumadocs-core/source";
 import { loader } from "fumadocs-core/source";
 import type { ProjectType } from "../types/ProjectType";

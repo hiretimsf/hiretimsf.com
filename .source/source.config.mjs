@@ -2,9 +2,11 @@
 import {
   defineCollections,
   defineDocs,
+  defineConfig,
   frontmatterSchema
 } from "fumadocs-mdx/config";
 import { z } from "zod";
+import lastModified from "fumadocs-mdx/plugins/last-modified";
 var featuredApps = defineDocs({
   dir: "features/home/content/featured-apps",
   docs: defineCollections({
@@ -157,12 +159,29 @@ var blog = defineDocs({
     })
   })
 });
+var privacy = defineDocs({
+  dir: "features/privacy/content",
+  docs: defineCollections({
+    type: "doc",
+    dir: "features/privacy/content",
+    schema: frontmatterSchema.extend({
+      title: z.string(),
+      description: z.string().optional(),
+      lastModified: z.union([z.string(), z.number(), z.date()]).optional()
+    })
+  })
+});
+var source_config_default = defineConfig({
+  plugins: [lastModified()]
+});
 export {
   about,
   blog,
+  source_config_default as default,
   education,
   experience,
   featuredApps,
+  privacy,
   projects,
   webApps
 };

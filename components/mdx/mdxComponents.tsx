@@ -67,7 +67,46 @@ function Table(props: TableHTMLAttributes<HTMLTableElement>) {
   );
 }
 
+function UnorderedList(props: HTMLAttributes<HTMLUListElement>) {
+  return (
+    <ul
+      className={cn(
+        "my-6 ml-6 list-disc marker:text-zinc-500",
+        props.className,
+      )}
+      {...props}
+    />
+  );
+}
+
+function OrderedList(props: HTMLAttributes<HTMLOListElement>) {
+  return (
+    <ol
+      className={cn(
+        "my-6 ml-6 list-decimal marker:text-zinc-500",
+        props.className,
+      )}
+      {...props}
+    />
+  );
+}
+
+function ListItem(props: HTMLAttributes<HTMLLIElement>) {
+  return (
+    <li
+      className={cn(
+        "mt-2 text-foreground/80 dark:text-foreground/60 text-base font-normal leading-7.5! text-pretty",
+        props.className,
+      )}
+      {...props}
+    />
+  );
+}
+
 const defaultMdxComponents = {
+  ul: UnorderedList,
+  ol: OrderedList,
+  li: ListItem,
   CodeBlockTab,
   CodeBlockTabs,
   CodeBlockTabsList,

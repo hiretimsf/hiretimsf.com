@@ -1,4 +1,4 @@
-import { education } from "@/.source";
+import { education } from "@/.source/server";
 import type { Source, SourceConfig } from "fumadocs-core/source";
 import { loader } from "fumadocs-core/source";
 

@@ -57,7 +57,7 @@ export default function CardItem({ index, item, type }: CardItemProps) {
         href={href}
       />
 
-      <div className="flex w-full items-stretch justify-between">
+      <div className="flex w-full items-stretch justify-between border-t border-dashed border-border-edge">
         <SideBorder position="left" />
         <div className="flex flex-1 flex-col">
           {isBlog ? (

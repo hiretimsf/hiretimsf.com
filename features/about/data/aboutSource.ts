@@ -1,4 +1,4 @@
-import { about } from "@/.source";
+import { about } from "@/.source/server";
 import type { Source, SourceConfig } from "fumadocs-core/source";
 import { loader } from "fumadocs-core/source";
 

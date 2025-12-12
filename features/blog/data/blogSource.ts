@@ -1,4 +1,4 @@
-import { blog } from "@/.source";
+import { blog } from "@/.source/server";
 import type { BlogPostType } from "@/features/blog/types/BlogPostType";
 import fs from "fs";
 import type { Source, SourceConfig } from "fumadocs-core/source";

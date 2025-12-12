@@ -1,19 +1,17 @@
 import ContactMe from "@/components/ContactMe";
 import { DocsLayout } from "@/components/fuma/fuma-layout";
 import { DocsBody, DocsPage } from "@/components/fuma/fuma-page";
-import Heading from "@/components/HeadingTitle";
+import HeadingTitle from "@/components/HeadingTitle";
 import SeparatorHorizontal from "@/components/SeparatorHorizontal";
 import HEAD from "@/config/seo/head";
-import { aboutSource } from "@/features/about/data/aboutSource";
+import { privacySource } from "@/features/privacy/data/privacySource";
 import { getBaseUrl } from "@/lib/helpers";
 import { getMDXComponents } from "@/mdx-components";
 import type { HeadType } from "@/types";
 import type { TableOfContents } from "fumadocs-core/toc";
 import type { Metadata } from "next";
-import Image from "next/image";
 import { notFound } from "next/navigation";
 import type { ComponentType } from "react";
-import Web from "@/features/about/components/Web";
 import LastModified from "@/components/LastModified";
 
 // Validate SEO configuration to ensure all required fields are present
@@ -23,7 +21,7 @@ if (!HEAD || HEAD.length === 0) {
 }
 
 // Define the current page for SEO configuration
-const PAGE = "About";
+const PAGE = "Privacy";
 
 // Get SEO configuration for the current page from the HEAD array
 const page = HEAD.find((page: HeadType) => page.page === PAGE) as HeadType;
@@ -53,48 +51,32 @@ type MDXPageData = {
   lastModified?: string | number | Date;
 };
 
-export default async function AboutMePage() {
-  const page = aboutSource.getPage(["about"]);
+export default async function PrivacyPage() {
+  const page = privacySource.getPage(["privacy"]);
   if (!page) notFound();
 
   const pageData = page.data as MDXPageData;
   const MDX = pageData.body;
   const title = pageData.title;
-  const imageUrl = pageData.imageUrl ?? "/images/horizontal-profile-about.jpg";
-  const imageAlt =
-    pageData.imageAlt ??
-    "Professional headshot of Tim, a Frontend Developer with 5 years of experience";
 
   return (
     <>
       <SeparatorHorizontal borderTop={false} />
       <main className="mx-auto flex flex-col">
-        <div className="relative">
-          <Image
-            alt={imageAlt}
-            src={imageUrl}
-            width={1000}
-            height={500}
-            className="h-auto max-h-96 w-full object-cover"
-            unoptimized
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1000px"
-          />
-        </div>
-        <SeparatorHorizontal short={true} />
-        <Heading
-          title={title ?? "Hello, I'm Tim"}
+        <HeadingTitle
+          title={title ?? "Privacy Policy"}
           textStyleClassName="text-3xl font-semibold md:text-4xl"
-          gridId="grid-about"
+          gridId="grid-privacy"
         />
         <SeparatorHorizontal short={true} />
         <div className="border-border relative min-h-52 max-w-full">
           <DocsLayout
-            tree={aboutSource.pageTree}
+            tree={privacySource.pageTree}
             containerProps={{ className: "relative bg-transparent" }}
           >
             <DocsPage toc={pageData.toc}>
               <DocsBody prose={false}>
-                <MDX code={MDX} components={{ ...getMDXComponents(), Web }} />
+                <MDX code={MDX} components={{ ...getMDXComponents() }} />
               </DocsBody>
             </DocsPage>
           </DocsLayout>

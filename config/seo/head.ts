@@ -66,6 +66,14 @@ const HEAD: HeadType[] = [
     ),
     slug: "/contact",
   },
+  {
+    page: "Privacy",
+    title: truncateTitle("Privacy Policy | Hire Tim"),
+    description: truncateDescription(
+      "Design Engineer with 5+ years experience. Pixel-perfect execution in Next.js, React, & TypeScript. Building high-quality, user-centric web & mobile apps.",
+    ),
+    slug: "/privacy",
+  },
 ];
 
 export default HEAD;

@@ -1,4 +1,4 @@
-import { featuredApps } from "@/.source";
+import { featuredApps } from "@/.source/server";
 import type { Source, SourceConfig } from "fumadocs-core/source";
 import { loader } from "fumadocs-core/source";
 import { formatDate } from "@/lib/helpers";

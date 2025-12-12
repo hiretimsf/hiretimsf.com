@@ -1,4 +1,4 @@
-import { experience } from "@/.source";
+import { experience } from "@/.source/server";
 import type { Source, SourceConfig } from "fumadocs-core/source";
 import { loader } from "fumadocs-core/source";
 import type { ExperienceType } from "../types/ExperienceType";
