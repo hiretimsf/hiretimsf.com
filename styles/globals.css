@@ -385,7 +385,7 @@
   }
 
   .tag {
-    @apply bg-muted/50 text-foreground/80 inline-flex items-center rounded-lg border border-border-edge px-1.5 py-0.5 font-mono text-sm;
+    @apply bg-muted/50 text-foreground/80 inline-flex items-center rounded-lg border border-border-edge px-1.5 py-0.5 font-mono text-xs;
   }
 }
 

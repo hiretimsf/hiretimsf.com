@@ -1,11 +1,18 @@
-import Heading from "@/components/HeadingTitle";
+import ContactMe from "@/components/ContactMe";
+import { DocsLayout } from "@/components/fuma/fuma-layout";
+import { DocsBody, DocsPage } from "@/components/fuma/fuma-page";
+import HeadingTitle from "@/components/HeadingTitle";
+import LastModified from "@/components/LastModified";
 import SeparatorHorizontal from "@/components/SeparatorHorizontal";
 import HEAD from "@/config/seo/head";
-import EducationSection from "@/features/education/components/EducationSection";
 import { getBaseUrl } from "@/lib/helpers";
+import { getMDXComponents } from "@/mdx-components";
 import type { HeadType } from "@/types";
+import type { TableOfContents } from "fumadocs-core/toc";
 import type { Metadata } from "next";
-import ContactMe from "@/components/ContactMe";
+import { notFound } from "next/navigation";
+import type { ComponentType } from "react";
+import { educationSource } from "@/features/education/data/educationSource";
 
 // Validate SEO configuration to ensure all required fields are present
 // This helps catch missing or incomplete SEO setup early
@@ -34,17 +41,51 @@ export const metadata: Metadata = {
   },
 };
 
+type MDXPageData = {
+  body: ComponentType<{ code: unknown; components?: unknown }>;
+  toc?: TableOfContents;
+  title?: string;
+  description?: string;
+  imageUrl?: string;
+  imageAlt?: string;
+  lastModified?: string | number | Date;
+};
+
 export default async function EducationPage() {
+  const page = educationSource.getPage(["education"]);
+  if (!page) notFound();
+
+  const pageData = page.data as MDXPageData;
+  const MDX = pageData.body;
+  const title = pageData.title;
+
   return (
     <>
+      <SeparatorHorizontal borderTop={false} />
       <main className="mx-auto flex flex-col">
-        <SeparatorHorizontal borderTop={false} />
-        <section className="relative z-10 mx-auto max-w-7xl">
-          <Heading title="EDUCATION" />
-          <SeparatorHorizontal short={true} />
-          <EducationSection className="w-full" />
-        </section>
+        <HeadingTitle
+          title={title ?? "Education"}
+          textStyleClassName="text-3xl font-semibold md:text-4xl"
+          gridId="grid-education"
+        />
+        <SeparatorHorizontal short={true} />
+        <div className="border-border relative min-h-52 max-w-full">
+          <DocsLayout
+            tree={educationSource.pageTree}
+            containerProps={{ className: "relative bg-transparent" }}
+          >
+            <DocsPage toc={pageData.toc} prose={false}>
+              <DocsBody prose={false}>
+                <MDX code={MDX} components={{ ...getMDXComponents() }} />
+              </DocsBody>
+            </DocsPage>
+          </DocsLayout>
+        </div>
       </main>
+      <SeparatorHorizontal short={true} />
+      <LastModified
+        lastModified={pageData.lastModified ?? new Date().toISOString()}
+      />
       <SeparatorHorizontal short={true} />
       <ContactMe />
       <SeparatorHorizontal borderBottom={false} />

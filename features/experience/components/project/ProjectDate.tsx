@@ -4,6 +4,8 @@ interface ProjectDateProps {
 
 export function ProjectDate({ date }: ProjectDateProps) {
   return (
-    <span className="text-muted-foreground text-sm font-mono">{date}</span>
+    <span className="text-muted-foreground text-sm font-mono tracking-tight">
+      {date}
+    </span>
   );
 }

@@ -80,63 +80,10 @@ var projects = defineDocs({
   })
 });
 var experience = defineDocs({
-  dir: "features/experience/content",
-  docs: defineCollections({
-    type: "doc",
-    dir: "features/experience/content",
-    schema: frontmatterSchema.extend({
-      title: z.string().optional(),
-      companyName: z.string(),
-      companyWebsite: z.string().optional(),
-      companyLogo: z.string().optional(),
-      companyLogoAlt: z.string().optional(),
-      companyLocation: z.string().optional(),
-      country: z.string().optional(),
-      isCurrentEmployer: z.boolean().optional(),
-      positions: z.array(
-        z.object({
-          id: z.string(),
-          title: z.string(),
-          employmentPeriod: z.string(),
-          employmentDuration: z.string().optional(),
-          employmentType: z.string().optional(),
-          description: z.string().optional(),
-          skills: z.array(z.string()).optional(),
-          icon: z.string().optional()
-        })
-      ),
-      projectSlugs: z.array(z.string()).optional()
-    })
-  })
+  dir: "features/experience/content"
 });
 var education = defineDocs({
-  dir: "features/education/content",
-  docs: defineCollections({
-    type: "doc",
-    dir: "features/education/content",
-    schema: frontmatterSchema.extend({
-      title: z.string().optional(),
-      companyName: z.string(),
-      companyWebsite: z.string().optional(),
-      companyLogo: z.string().optional(),
-      companyLogoAlt: z.string().optional(),
-      companyLocation: z.string().optional(),
-      country: z.string().optional(),
-      isCurrentEmployer: z.boolean().optional(),
-      positions: z.array(
-        z.object({
-          id: z.string(),
-          title: z.string(),
-          employmentPeriod: z.string(),
-          employmentDuration: z.string().optional(),
-          employmentType: z.string().optional(),
-          description: z.string().optional(),
-          skills: z.array(z.string()).optional()
-        })
-      ),
-      projectSlugs: z.array(z.string()).optional()
-    })
-  })
+  dir: "features/education/content"
 });
 var blog = defineDocs({
   dir: "features/blog/content",
