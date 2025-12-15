@@ -10,7 +10,11 @@ type YouTubeEmbedProps = {
   className?: string;
 };
 
-export default function YouTubeEmbed({ embedUrl, alt, className }: YouTubeEmbedProps) {
+export default function YouTubeEmbed({
+  embedUrl,
+  alt,
+  className,
+}: YouTubeEmbedProps) {
   const [isPlaying, setIsPlaying] = useState(false);
 
   // Extract video ID from embed URL
@@ -76,4 +80,3 @@ export default function YouTubeEmbed({ embedUrl, alt, className }: YouTubeEmbedP
     </div>
   );
 }
-

@@ -5,13 +5,13 @@ export const FAQ_ITEMS: FaqType[] = [
     id: "faq-1",
     question: "Why should you hire me?",
     answer:
-      "Because I love what I do. I enjoy building web and mobile apps. They are my biggest passions, and I put real energy and care into both.",
+      "Because I love what I do. I enjoy building apps and running. They are my biggest passions, and I put real energy and care into both.",
   },
   {
     id: "faq-2",
     question: "How much experience do you have?",
     answer:
-      "I have about four years of frontend development experience working with React, Next.js, TailwindCSS, JavaScript, and TypeScript.",
+      "I have about five years of frontend development experience working with React, Next.js, TailwindCSS, JavaScript, and TypeScript.",
   },
   {
     id: "faq-3",
@@ -40,7 +40,7 @@ export const FAQ_ITEMS: FaqType[] = [
     id: "faq-7",
     question: "What projects are you most passionate about?",
     answer:
-      "I enjoy building projects that make a positive impact. For example, I built a Mongolian Sign Language app to help bridge communication barriers.",
+      "I enjoy building projects that make a positive impact. One example is a full stack blog app I built that has received over 450 stars from developers.",
   },
   {
     id: "faq-8",
@@ -51,7 +51,7 @@ export const FAQ_ITEMS: FaqType[] = [
     id: "faq-9",
     question: "What is next for you in 2026 and beyond?",
     answer:
-      "I am exploring AI integration, modern architecture patterns, and building more web and mobile apps. I want to keep pushing my skills forward.",
+      "I want to build more web apps with AI integration and keep pushing my skills forward.",
   },
   {
     id: "faq-10",

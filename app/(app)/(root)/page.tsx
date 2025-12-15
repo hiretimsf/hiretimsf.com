@@ -17,14 +17,14 @@ export default function Home() {
       />
       <SeparatorHorizontal short={true} />
       <HeadingTitle
-        title="FEATURED APPS"
+        title="Featured Apps"
         textStyleClassName="text-2xl font-bold sm:text-3xl"
       />
       <SeparatorHorizontal short={true} />
       <FeaturedApps />
       <SeparatorHorizontal short={true} />
       <HeadingTitle
-        title="WHAT PEOPLE ARE SAYING"
+        title="What People Are Saying"
         textStyleClassName="text-2xl font-bold sm:text-3xl"
       />
       <SeparatorHorizontal short={true} />

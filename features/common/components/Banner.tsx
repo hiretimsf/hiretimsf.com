@@ -33,8 +33,8 @@ export default function Banner() {
           sizes="(max-width: 768px) 100vw, 300px"
         />
       </div>
-      <p className="mt-4 font-display text-md font-bold">Contact Me</p>
-      <p className="mt-1 text-sm text-foreground/80 underline-offset-4 group-hover:underline">
+      <p className="mt-4 font-display text-md font-semibold">Contact Me</p>
+      <p className="mt-1 text-sm font-normal text-foreground/80 underline-offset-4 group-hover:underline">
         I&apos;m available for work.
       </p>
     </Link>

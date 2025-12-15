@@ -3,7 +3,7 @@
 import { memo, useState } from "react";
 import { Tweet } from "react-tweet";
 import type { TestimonialType } from "@/features/home/types/TestimonialType";
-import YouTubeEmbed from "@/components/YouTubeEmbed";
+import YouTubeEmbed from "@/features/home/components/YouTubeEmbed";
 
 // Type guard for Shoutout
 function isTweetShoutout(
