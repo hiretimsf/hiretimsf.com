@@ -4,9 +4,7 @@ import type { HeadType } from "@/types";
 const HEAD: HeadType[] = [
   {
     page: "Home",
-    title: truncateTitle(
-      "Tim | Frontend Developer | 5+ Years Exp",
-    ),
+    title: truncateTitle("Tim | Frontend Developer | 5+ Years Exp"),
     description: truncateDescription(
       "Frontend Developer with 5+ years experience. Pixel-perfect execution in Next.js, React, & TypeScript. Building high-quality, user-centric web & mobile apps.",
     ),
@@ -14,9 +12,7 @@ const HEAD: HeadType[] = [
   },
   {
     page: "About",
-    title: truncateTitle(
-      "About Tim | Frontend Developer | 5+ Years Exp",
-    ),
+    title: truncateTitle("About Tim | Frontend Developer | 5+ Years Exp"),
     description: truncateDescription(
       "Frontend Developer with 5+ years experience. Pixel-perfect execution in Next.js, React, & TypeScript. Building high-quality, user-centric web & mobile apps.",
     ),
@@ -24,9 +20,7 @@ const HEAD: HeadType[] = [
   },
   {
     page: "Experience",
-    title: truncateTitle(
-      "WorkExperience | Frontend Developer | 5+ Years Exp",
-    ),
+    title: truncateTitle("WorkExperience | Frontend Developer | 5+ Years Exp"),
     description: truncateDescription(
       "Work experience of Tim, a Frontend Developer based in San Francisco Bay Area.",
     ),
@@ -37,9 +31,7 @@ const HEAD: HeadType[] = [
     title: truncateTitle(
       "Education of Tim | Frontend Developer | 5+ Years Exp",
     ),
-    description: truncateDescription(
-      "Education of Tim, a Frontend Developer.",
-    ),
+    description: truncateDescription("Education of Tim, a Frontend Developer."),
     slug: "/education",
   },
   {
@@ -60,9 +52,11 @@ const HEAD: HeadType[] = [
   },
   {
     page: "Contact",
-    title: truncateTitle("Contact Tim | Hire a Frontend Developer | 5+ Years Exp"),
+    title: truncateTitle(
+      "Contact Tim | Hire a Frontend Developer | 5+ Years Exp",
+    ),
     description: truncateDescription(
-      "Ready to build high-quality, user-centric applications? Get in touch with Tim for pixel-perfect execution.",
+      "Have a project in mind? Let's connect. Open to remote and on-site opportunities in the San Francisco Bay Area.",
     ),
     slug: "/contact",
   },
