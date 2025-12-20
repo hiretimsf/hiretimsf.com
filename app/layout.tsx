@@ -3,10 +3,11 @@ import "@/styles/globals.css";
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import { NuqsAdapter } from "nuqs/adapters/next/app";
-import type { WebSite, WithContext } from "schema-dts";
+import type { Person, WebSite, WithContext } from "schema-dts";
 
 import ConsentManager from "@/components/ConsentManager";
 import { Providers } from "@/components/Providers";
+import { SkipToMain } from "@/components/SkipToMain";
 import { AUTHOR, FAVICONS, HEAD, KEYWORDS, OPEN_GRAPH } from "@/config/seo";
 import { SITE_INFO } from "@/config/seo/site";
 import { META_THEME_COLORS } from "@/config/theme";
@@ -27,6 +28,32 @@ function getWebSiteJsonLd(): WithContext<WebSite> {
     name: SITE_INFO.name,
     url: SITE_INFO.url,
     alternateName: [SITE_INFO.alternateName],
+  };
+}
+
+// Generates JSON-LD structured data for the person/professional
+function getPersonJsonLd(): WithContext<Person> {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: AUTHOR.name,
+    url: SITE_INFO.url,
+    image: OPEN_GRAPH.image,
+    jobTitle: "Frontend Developer",
+    description: "Frontend Developer specializing in React, Next.js, and modern web technologies",
+    sameAs: [
+      AUTHOR.twitterUrl,
+      AUTHOR.githubUrl,
+    ].filter(Boolean),
+    knowsAbout: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "JavaScript",
+      "Tailwind CSS",
+      "Web Development",
+      "Frontend Development",
+    ],
   };
 }
 
@@ -173,8 +200,16 @@ export default function RootLayout({ children }: RootLayoutProps) {
             __html: JSON.stringify(getWebSiteJsonLd()).replace(/</g, "\\u003c"),
           }}
         />
+        <script
+          type="application/ld+json"
+          // biome-ignore lint/security/noDangerouslySetInnerHtml: Injecting JSON-LD for SEO
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(getPersonJsonLd()).replace(/</g, "\\u003c"),
+          }}
+        />
       </head>
       <body suppressHydrationWarning>
+        <SkipToMain />
         <Providers>
           <NuqsAdapter>
             <ConsentManager>{children}</ConsentManager>

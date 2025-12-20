@@ -58,7 +58,7 @@ cp env.template .env.local
 npm run dev
 ```
 
-The site will be available at [http://localhost:1408](http://localhost:1408).
+The site will be available at [http://localhost:3000](http://localhost:3000).
 
 ### Scripts
 
