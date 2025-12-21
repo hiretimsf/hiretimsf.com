@@ -19,16 +19,34 @@ const SiteHeader: FC<Props> = () => {
   const { scrollY } = useScroll();
 
   const [affix, setAffix] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isFixed, setIsFixed] = useState(false);
+
+  const handleMobileMenuChange = (open: boolean) => {
+    setMobileMenuOpen(open);
+    if (open) {
+      setIsFixed(true);
+    } else {
+      setTimeout(() => setIsFixed(false), 300);
+    }
+  };
 
   useMotionValueEvent(scrollY, "change", (latestValue) => {
     setAffix(latestValue >= 8);
   });
 
   return (
+    <>
     <header
       className={cn(
-        "sticky top-0 z-50 backdrop-blur bg-background w-full border-y border-edge",
+        "z-50 w-full border-y border-edge bg-background transition-transform",
+        mobileMenuOpen || isFixed ? "fixed top-0 inset-x-0 z-[100]" : "sticky top-0",
       )}
+      style={{
+        WebkitBackfaceVisibility: "hidden",
+        backfaceVisibility: "hidden",
+        willChange: "transform",
+      }}
     >
       <div
         data-affix={affix}
@@ -39,10 +57,16 @@ const SiteHeader: FC<Props> = () => {
         )}
       >
         <DesktopHeader activePath={path} />
-        <MobileHeader currentPath={path} />
+        <MobileHeader
+          currentPath={path}
+          isOpen={mobileMenuOpen}
+          onOpenChange={handleMobileMenuChange}
+        />
       </div>
       {showProgressBar && <ProgressBar />}
     </header>
+    {(mobileMenuOpen || isFixed) && <div className="h-18" aria-hidden="true" />}
+    </>
   );
 };
 

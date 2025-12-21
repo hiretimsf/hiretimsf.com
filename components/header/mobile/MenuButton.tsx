@@ -21,31 +21,41 @@ import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import type { FC } from "react";
-import React, { memo, useCallback, useState } from "react";
+import React, { memo, useCallback } from "react";
 
 interface Props {
   currentPath: string;
   className?: string;
+  isOpen: boolean;
+  onOpenChange: (open: boolean) => void;
 }
 
 const extractActivePath = (path: string): string => {
   return path.split("/")[1] ? `/${path.split("/")[1]}` : path;
 };
 
-const MenuButton: FC<Props> = memo(({ currentPath, className }) => {
-  const activePath = extractActivePath(currentPath);
-  const [isOpen, setIsOpen] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
+const MenuButton: FC<Props> = memo(
+  ({ currentPath, className, isOpen, onOpenChange }) => {
+    const activePath = extractActivePath(currentPath);
+    // Removed local state: const [isOpen, setIsOpen] = useState(false);
+    // Removed local state: const [isLoading, setIsLoading] = useState(false); Note: isLoading seems local to the navigation action, but let's check if it needs to be lifted. 
+    // Wait, isLoading was used for SubNavigationItem. It seems safe to keep isLoading local as it's UI state for the transition, NOT the menu open state.
+    // Let's re-add isLoading.
 
-  const toggleSheet = useCallback(() => {
-    setIsOpen((prev) => !prev);
-  }, []);
+    const [isLoading, setIsLoading] = React.useState(false);
 
-  const handleKeyDown = useCallback((e: React.KeyboardEvent) => {
-    if (e.key === "Escape") {
-      setIsOpen(false);
-    }
-  }, []);
+    const toggleSheet = useCallback(() => {
+      onOpenChange(!isOpen);
+    }, [isOpen, onOpenChange]);
+
+  const handleKeyDown = useCallback(
+    (e: React.KeyboardEvent) => {
+      if (e.key === "Escape") {
+        onOpenChange(false);
+      }
+    },
+    [onOpenChange],
+  );
 
   const handleNavigation = useCallback(() => {
     setIsLoading(true);
@@ -55,7 +65,7 @@ const MenuButton: FC<Props> = memo(({ currentPath, className }) => {
   }, [toggleSheet]);
 
   return (
-    <Sheet open={isOpen} onOpenChange={setIsOpen}>
+    <Sheet open={isOpen} onOpenChange={onOpenChange}>
       <SheetTrigger asChild>
         <Button
           onClick={toggleSheet}
