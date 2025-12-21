@@ -9,41 +9,40 @@ import { Provider as JotaiProvider } from "jotai";
 import { ThemeProvider } from "next-themes";
 import { useState } from "react";
 import { Toaster } from "@/components/ui/sonner";
-
-if (typeof window !== "undefined") {
-  import("@/instrumentation-client");
-}
+import { PostHogProvider } from "@/components/PostHogProvider";
 
 export function Providers({ children }: { children: React.ReactNode }) {
   const [queryClient] = useState(() => new QueryClient());
 
   return (
-    <JotaiProvider>
-      <QueryClientProvider client={queryClient}>
-        <ThemeProvider
-          enableSystem
-          disableTransitionOnChange
-          enableColorScheme
-          storageKey="theme"
-          defaultTheme="system"
-          attribute="class"
-        >
-          <RootProvider search={{ enabled: false }}>
-            <AppProgressProvider
-              color="var(--foreground)"
-              height="2px"
-              delay={500}
-              options={{ showSpinner: false }}
-            >
-              {children}
-            </AppProgressProvider>
-          </RootProvider>
+    <PostHogProvider>
+      <JotaiProvider>
+        <QueryClientProvider client={queryClient}>
+          <ThemeProvider
+            enableSystem
+            disableTransitionOnChange
+            enableColorScheme
+            storageKey="theme"
+            defaultTheme="system"
+            attribute="class"
+          >
+            <RootProvider search={{ enabled: false }}>
+              <AppProgressProvider
+                color="var(--foreground)"
+                height="2px"
+                delay={500}
+                options={{ showSpinner: false }}
+              >
+                {children}
+              </AppProgressProvider>
+            </RootProvider>
 
-          <Toaster />
-          <Analytics />
-          <SpeedInsights />
-        </ThemeProvider>
-      </QueryClientProvider>
-    </JotaiProvider>
+            <Toaster />
+            <Analytics />
+            <SpeedInsights />
+          </ThemeProvider>
+        </QueryClientProvider>
+      </JotaiProvider>
+    </PostHogProvider>
   );
 }
