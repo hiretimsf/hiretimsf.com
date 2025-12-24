@@ -10,10 +10,6 @@ Check out the live site: [hiretimsf.com](https://hiretimsf.com)
   <img src="docs/images/main-image.jpg" alt="Desktop Preview" width="100%" />
 </div>
 
-<div align="center">
-  <img src="docs/images/mobile-preview.png" alt="Mobile Preview" width="30%" />
-</div>
-
 ## Overview
 
 ### Tech Stack
