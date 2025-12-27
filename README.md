@@ -28,7 +28,7 @@ Check out the live site: [hiretimsf.com](https://hiretimsf.com)
   <img src="docs/images/github-components-mockup.jpg" alt="Components Preview" width="100%" />
 </div>
 
-## 💼 Experience & Education Preview
+## 📱 Mobile-First Responsive Design
 
 <div align="center">
   <img src="docs/images/github-experience-section.png" alt="Experience & Education Preview" width="100%" />
