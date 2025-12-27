@@ -4,36 +4,42 @@ A minimal portfolio and blog to showcase my work as a Frontend Developer.
 
 Check out the live site: [hiretimsf.com](https://hiretimsf.com)
 
-## Project Preview
+## 📸 Project Preview
 
 <div align="center">
   <img src="docs/images/github-heading.jpg" alt="Desktop Preview" width="100%" />
 </div>
 
-## Desktop Preview
+## 🖥️ Desktop Preview
 
 <div align="center">
   <img src="docs/images/github-desktop-mockup.jpg" alt="Desktop Preview" width="100%" />
 </div>
 
-## Mobile Preview
+## 📱 Mobile Preview
 
 <div align="center">
   <img src="docs/images/github-mobile-mockup.jpg" alt="Mobile Preview" width="100%" />
 </div>
 
-## Overview
+## 🧩 Components Preview
+
+<div align="center">
+  <img src="docs/images/github-components-mockup.jpg" alt="Mobile Preview" width="100%" />
+</div>
+
+## ℹ️ Overview
 
 ### Tech Stack
 
-- **Framework**: [Next.js 16](https://nextjs.org) (App Router, Turbopack)
-- **Styling**: [Tailwind CSS v4](https://tailwindcss.com)
-- **UI Components**: [shadcn/ui](https://ui.shadcn.com), [Radix UI](https://www.radix-ui.com)
-- **Animations**: [Motion](https://motion.dev)
-- **Content**: [Fumadocs](https://fumadocs.vercel.app) (MDX)
-- **State Management**: [Nuqs](https://nuqs.47ng.com) (URL state), [Jotai](https://jotai.org)
-- **Analytics**: [Vercel Analytics](https://vercel.com/analytics), [PostHog](https://posthog.com)
-- **Deployment**: [Vercel](https://vercel.com)
+- ⚛️ **Framework**: [Next.js 16](https://nextjs.org) (App Router, Turbopack)
+- 🎨 **Styling**: [Tailwind CSS v4](https://tailwindcss.com)
+- 🧩 **UI Components**: [shadcn/ui](https://ui.shadcn.com), [Radix UI](https://www.radix-ui.com)
+- ✨ **Animations**: [Motion](https://motion.dev)
+- 📝 **Content**: [Fumadocs](https://fumadocs.vercel.app) (MDX)
+- 🔄 **State Management**: [Nuqs](https://nuqs.47ng.com) (URL state), [Jotai](https://jotai.org)
+- 📊 **Analytics**: [Vercel Analytics](https://vercel.com/analytics), [PostHog](https://posthog.com)
+- 🚀 **Deployment**: [Vercel](https://vercel.com)
 
 ### Features
 
@@ -42,8 +48,9 @@ Check out the live site: [hiretimsf.com](https://hiretimsf.com)
 - 📱 **Mobile First**: Fully responsive layout ensuring great experience on all devices.
 - 🔍 **SEO Optimized**: Built-in SEO best practices, JSON-LD schema, sitemap, and robots.txt.
 - 📝 **MDX Blog**: Content management using Fumadocs with MDX support.
+- 🔎 **Local Search**: Custom implementation with fuzzy matching and keyword highlighting.
 
-## Architecture
+## 🏗️ Architecture
 
 ### Folder Structure
 
@@ -61,23 +68,23 @@ Check out the live site: [hiretimsf.com](https://hiretimsf.com)
 └── types/          # TypeScript type definitions
 ```
 
-## Performance
+## ⚡ Performance
 
 This project is built with performance in mind:
 
-- **Core Web Vitals**: Optimized for LCP, FID, and CLS.
-- **Image Optimization**: Using `next/image` for automatic resizing and format serving.
-- **Font Optimization**: `next/font` for self-formatting Google Fonts.
-- **Bundle Analysis**: Regular checks to keep bundle size small.
+- 🚀 **Core Web Vitals**: Optimized for LCP, FID, and CLS.
+- 🖼️ **Image Optimization**: Using `next/image` for automatic resizing and format serving.
+- 🔤 **Font Optimization**: `next/font` for self-formatting Google Fonts.
+- 📦 **Bundle Analysis**: Regular checks to keep bundle size small.
 
-## Development
+## 🛠️ Development
 
-### Prerequisites
+### 📋 Prerequisites
 
 - Node.js 20+
 - pnpm (recommended) or npm
 
-### Getting Started
+### 🏁 Getting Started
 
 1. **Clone the repository**
 
@@ -109,7 +116,7 @@ npm run dev
 
 The site will be available at [http://localhost:3000](http://localhost:3000).
 
-### Scripts
+### 📜 Scripts
 
 | Command                | Description                  |
 | ---------------------- | ---------------------------- |
@@ -122,11 +129,11 @@ The site will be available at [http://localhost:3000](http://localhost:3000).
 | `npm run format:write` | Format code with Prettier    |
 | `npm run validate-seo` | Validate SEO configuration   |
 
-## License
+## 📄 License
 
 Licensed under the [MIT license](./LICENSE).
 
-## Acknowledgments
+## 🙏 Acknowledgments
 
 - [React](https://react.dev)
 - [Next.js](https://nextjs.org)
@@ -135,3 +142,7 @@ Licensed under the [MIT license](./LICENSE).
 - [Motion](https://motion.dev)
 - [shadcn/ui](https://ui.shadcn.com)
 - [Lucide](https://lucide.dev)
+
+<div align="center">
+  <img src="docs/images/github-contact.jpg" alt="Contact Me" width="100%" />
+</div>
